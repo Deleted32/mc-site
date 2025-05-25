@@ -11,14 +11,15 @@
       100%{background-position:0% 50%}
     }
     body {
-      margin: 0; padding: 0;
+      margin: 0;
+      padding: 0;
       height: 100vh;
       background: linear-gradient(-45deg, #5865F2, #6E44FF, #99AAB5, #2C2F33);
       background-size: 400% 400%;
       animation: bgAnimation 20s ease infinite;
       font-family: 'Poppins', sans-serif;
       color: white;
-      display: flex; justify-content: center; align-items: center;
+      overflow: hidden;
     }
     .container {
       background: rgba(0,0,0,0.85);
@@ -27,17 +28,14 @@
       box-shadow: 0 0 40px #7289da;
       width: 380px;
       text-align: center;
-      position: relative;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
     }
-    h1 {
+    h1, h2 {
       font-family: 'Orbitron', sans-serif;
       margin-bottom: 18px;
-      letter-spacing: 3px;
-      font-size: 2.2rem;
-    }
-    h2 {
-      font-family: 'Orbitron', sans-serif;
-      margin-bottom: 25px;
     }
     input {
       width: 100%;
@@ -76,61 +74,53 @@
       font-weight: 600;
       height: 26px;
     }
-    .ip-container {
-      margin: 25px 0 10px 0;
-      background: #23272a;
-      padding: 14px;
-      border-radius: 14px;
+
+    #menu-container {
+      display: none;
+    }
+
+    .top-menu {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      display: flex;
+      gap: 15px;
+    }
+
+    .menu-btn {
+      background-color: #23272a;
+      padding: 12px 18px;
+      border-radius: 10px;
+      font-size: 0.95rem;
+      font-weight: 600;
       cursor: pointer;
-      user-select: none;
+      box-shadow: 0 0 10px #5865f2;
+      transition: background-color 0.3s ease;
+      text-align: center;
+    }
+
+    .menu-btn:hover {
+      background-color: #5865F2;
+    }
+
+    .ip-container {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #23272a;
+      padding: 12px 20px;
+      border-radius: 12px;
       font-weight: 700;
-      font-size: 1.25rem;
+      font-size: 1.2rem;
+      cursor: pointer;
       box-shadow: 0 0 14px #5865f2;
       transition: background-color 0.3s ease;
     }
+
     .ip-container:hover {
       background-color: #5865f2;
       color: white;
-    }
-    .discord-btn {
-      display: inline-block;
-      margin-top: 18px;
-      background-color: #5865F2;
-      color: white;
-      padding: 12px 26px;
-      border-radius: 30px;
-      font-weight: 700;
-      text-decoration: none;
-      box-shadow: 0 0 20px #5865f2;
-      transition: background-color 0.3s ease;
-    }
-    .discord-btn:hover {
-      background-color: #4752c4;
-    }
-    #welcome-msg {
-      margin-top: 18px;
-      font-size: 1.15rem;
-      font-weight: 700;
-      color: #a6f7a6;
-    }
-    #menu {
-      display: none;
-      flex-direction: column;
-      gap: 15px;
-      margin-top: 30px;
-    }
-    .menu-btn {
-      background-color: #23272a;
-      padding: 14px;
-      border-radius: 12px;
-      font-size: 1rem;
-      font-weight: 700;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      box-shadow: 0 0 15px #5865f2;
-    }
-    .menu-btn:hover {
-      background-color: #5865F2;
     }
   </style>
 </head>
@@ -152,18 +142,16 @@
   </div>
 </div>
 
-<div class="container" id="menu-container" style="display: none;">
-  <h1>Hoşgeldin!</h1>
-  <div class="ip-container" id="server-ip">
-    deleted32.com:3131
-  </div>
-  <a href="https://discord.gg/xxxxx" target="_blank" class="discord-btn">Discord</a>
-
-  <div id="menu">
+<div id="menu-container">
+  <div class="top-menu">
+    <div class="menu-btn">Discord</div>
     <div class="menu-btn">Mağaza</div>
-    <div class="menu-btn">Ceza Geçmişi</div>
+    <div class="menu-btn">Ceza</div>
     <div class="menu-btn">Başvuru</div>
     <div class="menu-btn">Destek</div>
+  </div>
+  <div class="ip-container" id="server-ip">
+    deleted32.com:3131
   </div>
 </div>
 
@@ -175,10 +163,9 @@
   const message = document.getElementById('message');
   const usernameInput = document.getElementById('username');
   const passwordInput = document.getElementById('password');
-  const serverIp = document.getElementById('server-ip');
   const authContainer = document.getElementById('auth-container');
   const menuContainer = document.getElementById('menu-container');
-  const menu = document.getElementById('menu');
+  const serverIp = document.getElementById('server-ip');
 
   let users = {};
   let isRegister = true;
@@ -237,7 +224,6 @@
   function showMenu() {
     authContainer.style.display = 'none';
     menuContainer.style.display = 'block';
-    menu.style.display = 'flex';
   }
 
   serverIp.addEventListener('click', () => {
