@@ -1,130 +1,142 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Deleted32 Sunucu Sitesi</title>
-<style>
-  /* Hareketli arka plan */
-  @keyframes bgAnimation {
-    0%{background-position:0% 50%}
-    50%{background-position:100% 50%}
-    100%{background-position:0% 50%}
-  }
-  body {
-    margin: 0; padding: 0;
-    height: 100vh;
-    background: linear-gradient(-45deg, #5865F2, #6E44FF, #99AAB5, #2C2F33);
-    background-size: 400% 400%;
-    animation: bgAnimation 20s ease infinite;
-    font-family: 'Poppins', sans-serif;
-    color: white;
-    display: flex; justify-content: center; align-items: center;
-  }
-  .container {
-    background: rgba(0,0,0,0.85);
-    padding: 35px 45px;
-    border-radius: 20px;
-    box-shadow: 0 0 40px #7289da;
-    width: 380px;
-    text-align: center;
-    position: relative;
-  }
-  h1 {
-    font-family: 'Orbitron', sans-serif;
-    margin-bottom: 18px;
-    letter-spacing: 3px;
-    font-size: 2.2rem;
-  }
-  h2 {
-    font-family: 'Orbitron', sans-serif;
-    margin-bottom: 25px;
-  }
-  input {
-    width: 100%;
-    padding: 14px;
-    margin: 10px 0 22px 0;
-    border-radius: 12px;
-    border: none;
-    font-size: 1rem;
-    outline: none;
-  }
-  button {
-    width: 100%;
-    padding: 14px;
-    background: #5865F2;
-    border: none;
-    border-radius: 60px;
-    font-weight: 700;
-    font-size: 1.2rem;
-    cursor: pointer;
-    color: white;
-    margin-bottom: 12px;
-    transition: background-color 0.3s ease;
-    box-shadow: 0 0 15px #5865f2;
-  }
-  button:hover {
-    background: #4752c4;
-  }
-  .toggle-link {
-    color: #99aab5;
-    cursor: pointer;
-    text-decoration: underline;
-    font-weight: 600;
-  }
-  .message {
-    margin-bottom: 18px;
-    font-weight: 600;
-    height: 26px;
-  }
-
-  /* IP kısmı */
-  .ip-container {
-    margin: 25px 0 10px 0;
-    background: #23272a;
-    padding: 14px;
-    border-radius: 14px;
-    cursor: pointer;
-    user-select: none;
-    font-weight: 700;
-    font-size: 1.25rem;
-    box-shadow: 0 0 14px #5865f2;
-    transition: background-color 0.3s ease;
-  }
-  .ip-container:hover {
-    background-color: #5865f2;
-    color: white;
-  }
-
-  /* Discord butonu */
-  .discord-btn {
-    display: inline-block;
-    margin-top: 18px;
-    background-color: #5865F2;
-    color: white;
-    padding: 12px 26px;
-    border-radius: 30px;
-    font-weight: 700;
-    text-decoration: none;
-    box-shadow: 0 0 20px #5865f2;
-    transition: background-color 0.3s ease;
-  }
-  .discord-btn:hover {
-    background-color: #4752c4;
-  }
-
-  /* Hoşgeldin mesajı */
-  #welcome-msg {
-    margin-top: 18px;
-    font-size: 1.15rem;
-    font-weight: 700;
-    color: #a6f7a6;
-  }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Deleted32 Sunucu Sitesi</title>
+  <style>
+    @keyframes bgAnimation {
+      0%{background-position:0% 50%}
+      50%{background-position:100% 50%}
+      100%{background-position:0% 50%}
+    }
+    body {
+      margin: 0; padding: 0;
+      height: 100vh;
+      background: linear-gradient(-45deg, #5865F2, #6E44FF, #99AAB5, #2C2F33);
+      background-size: 400% 400%;
+      animation: bgAnimation 20s ease infinite;
+      font-family: 'Poppins', sans-serif;
+      color: white;
+      display: flex; justify-content: center; align-items: center;
+    }
+    .container {
+      background: rgba(0,0,0,0.85);
+      padding: 35px 45px;
+      border-radius: 20px;
+      box-shadow: 0 0 40px #7289da;
+      width: 380px;
+      text-align: center;
+      position: relative;
+    }
+    h1 {
+      font-family: 'Orbitron', sans-serif;
+      margin-bottom: 18px;
+      letter-spacing: 3px;
+      font-size: 2.2rem;
+    }
+    h2 {
+      font-family: 'Orbitron', sans-serif;
+      margin-bottom: 25px;
+    }
+    input {
+      width: 100%;
+      padding: 14px;
+      margin: 10px 0 22px 0;
+      border-radius: 12px;
+      border: none;
+      font-size: 1rem;
+      outline: none;
+    }
+    button {
+      width: 100%;
+      padding: 14px;
+      background: #5865F2;
+      border: none;
+      border-radius: 60px;
+      font-weight: 700;
+      font-size: 1.2rem;
+      cursor: pointer;
+      color: white;
+      margin-bottom: 12px;
+      transition: background-color 0.3s ease;
+      box-shadow: 0 0 15px #5865f2;
+    }
+    button:hover {
+      background: #4752c4;
+    }
+    .toggle-link {
+      color: #99aab5;
+      cursor: pointer;
+      text-decoration: underline;
+      font-weight: 600;
+    }
+    .message {
+      margin-bottom: 18px;
+      font-weight: 600;
+      height: 26px;
+    }
+    .ip-container {
+      margin: 25px 0 10px 0;
+      background: #23272a;
+      padding: 14px;
+      border-radius: 14px;
+      cursor: pointer;
+      user-select: none;
+      font-weight: 700;
+      font-size: 1.25rem;
+      box-shadow: 0 0 14px #5865f2;
+      transition: background-color 0.3s ease;
+    }
+    .ip-container:hover {
+      background-color: #5865f2;
+      color: white;
+    }
+    .discord-btn {
+      display: inline-block;
+      margin-top: 18px;
+      background-color: #5865F2;
+      color: white;
+      padding: 12px 26px;
+      border-radius: 30px;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 0 20px #5865f2;
+      transition: background-color 0.3s ease;
+    }
+    .discord-btn:hover {
+      background-color: #4752c4;
+    }
+    #welcome-msg {
+      margin-top: 18px;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #a6f7a6;
+    }
+    #menu {
+      display: none;
+      flex-direction: column;
+      gap: 15px;
+      margin-top: 30px;
+    }
+    .menu-btn {
+      background-color: #23272a;
+      padding: 14px;
+      border-radius: 12px;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 15px #5865f2;
+    }
+    .menu-btn:hover {
+      background-color: #5865F2;
+    }
+  </style>
 </head>
 <body>
 
-<div class="container">
+<div class="container" id="auth-container">
   <h1>Deleted32</h1>
   <h2 id="form-title">Kayıt Ol</h2>
 
@@ -138,14 +150,21 @@
     <span id="toggle-text">Zaten hesabın var mı? </span>
     <span class="toggle-link" id="toggle-link">Giriş Yap</span>
   </div>
+</div>
 
-  <div class="ip-container" id="server-ip" title="Sunucu IP'sine tıkla, kopyalansın!">
+<div class="container" id="menu-container" style="display: none;">
+  <h1>Hoşgeldin!</h1>
+  <div class="ip-container" id="server-ip">
     deleted32.com:3131
   </div>
+  <a href="https://discord.gg/xxxxx" target="_blank" class="discord-btn">Discord</a>
 
-  <a href="https://discord.gg/xxxxxxx" target="_blank" class="discord-btn" id="discord-btn">Discord'a Katıl</a>
-
-  <div id="welcome-msg"></div>
+  <div id="menu">
+    <div class="menu-btn">Mağaza</div>
+    <div class="menu-btn">Ceza Geçmişi</div>
+    <div class="menu-btn">Başvuru</div>
+    <div class="menu-btn">Destek</div>
+  </div>
 </div>
 
 <script>
@@ -157,17 +176,16 @@
   const usernameInput = document.getElementById('username');
   const passwordInput = document.getElementById('password');
   const serverIp = document.getElementById('server-ip');
-  const welcomeMsg = document.getElementById('welcome-msg');
+  const authContainer = document.getElementById('auth-container');
+  const menuContainer = document.getElementById('menu-container');
+  const menu = document.getElementById('menu');
 
-  // Kullanıcıları basit objede tutuyoruz (sayfa yenilenince silinir)
   let users = {};
-  let loggedUser = null;
-  let isRegister = true; // Kayıt formu açık başta
+  let isRegister = true;
 
   toggleLink.addEventListener('click', () => {
     isRegister = !isRegister;
     message.textContent = '';
-    welcomeMsg.textContent = '';
     usernameInput.value = '';
     passwordInput.value = '';
 
@@ -188,38 +206,27 @@
     const username = usernameInput.value.trim();
     const password = passwordInput.value.trim();
 
-    if(username.length < 3) {
+    if(username.length < 3 || password.length < 4) {
       message.style.color = 'red';
-      message.textContent = 'Kullanıcı adı en az 3 karakter olmalı.';
-      return;
-    }
-    if(password.length < 4) {
-      message.style.color = 'red';
-      message.textContent = 'Şifre en az 4 karakter olmalı.';
+      message.textContent = 'Geçerli kullanıcı adı ve şifre girin.';
       return;
     }
 
     if(isRegister) {
-      // Kayıt işlemi
       if(users[username]) {
         message.style.color = 'red';
-        message.textContent = 'Bu kullanıcı adı zaten kayıtlı.';
+        message.textContent = 'Bu kullanıcı zaten var.';
       } else {
         users[username] = password;
         message.style.color = 'lightgreen';
-        message.textContent = `Kayıt başarılı! Hoşgeldin, ${username}. Giriş yapabilirsin.`;
-        // Otomatik giriş sayfasına geçiş yap
+        message.textContent = 'Kayıt başarılı! Giriş yapabilirsin.';
         setTimeout(() => {
           toggleLink.click();
         }, 1500);
       }
     } else {
-      // Giriş işlemi
       if(users[username] && users[username] === password) {
-        message.style.color = 'lightgreen';
-        message.textContent = `Başarıyla giriş yapıldı! Hoşgeldin, ${username}.`;
-        loggedUser = username;
-        welcomeMsg.textContent = `Hoşgeldin, ${loggedUser}! Minecraft skinini yakında buraya ekleyebiliriz.`;
+        showMenu();
       } else {
         message.style.color = 'red';
         message.textContent = 'Kullanıcı adı veya şifre yanlış.';
@@ -227,7 +234,19 @@
     }
   });
 
-  // IP kopyalama ve mesaj gösterme
+  function showMenu() {
+    authContainer.style.display = 'none';
+    menuContainer.style.display = 'block';
+    menu.style.display = 'flex';
+  }
+
+  serverIp.addEventListener('click', () => {
+    const ip = serverIp.textContent.trim();
+    navigator.clipboard.writeText(ip).then(() => {
+      showCopyMessage();
+    });
+  });
+
   function showCopyMessage() {
     const msg = document.createElement('div');
     msg.textContent = "IP kopyalandı!";
@@ -249,13 +268,6 @@
       msg.remove();
     }, 1800);
   }
-
-  serverIp.addEventListener('click', () => {
-    const ip = serverIp.textContent.trim();
-    navigator.clipboard.writeText(ip).then(() => {
-      showCopyMessage();
-    });
-  });
 </script>
 
 </body>
