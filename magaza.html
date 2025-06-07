@@ -1,20 +1,33 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Netaria Mağaza</title>
-  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Montserrat:wght@500&display=swap" rel="stylesheet">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Press+Start+2P&display=swap" rel="stylesheet" />
+
   <style>
-    body {
+    /* Body arka plan ve genel stil */
+    html, body {
       margin: 0;
-      font-family: 'Montserrat', sans-serif;
-      background: url('https://i.imgur.com/FjqSSlK.png') no-repeat center center fixed;
-      background-size: cover;
+      padding: 0;
+      height: 100%;
+      font-family: 'Montserrat', 'Press Start 2P', cursive, sans-serif;
       color: white;
       text-align: center;
+      background:
+        linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+        url('https://i.imgur.com/vwpDzZx_d.webp?maxwidth=760&fidelity=grand') no-repeat center center fixed;
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+      position: relative;
+      z-index: 0;
     }
 
+    /* Sabit menü */
     nav {
       background-color: rgba(0, 0, 0, 0.6);
       padding: 20px;
@@ -22,73 +35,76 @@
       top: 0;
       width: 100%;
       z-index: 999;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
     }
 
     nav a {
-      margin: 0 20px;
-      color: #fff;
+      color: white;
       text-decoration: none;
       font-variant: small-caps;
-      font-size: 1.1rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      font-family: 'Montserrat', sans-serif;
+      transition: color 0.3s ease;
     }
 
+    nav a:hover {
+      color: #f39c12;
+    }
+
+    /* İçerik alanı */
     .container {
-      padding-top: 140px;
+      margin-top: 120px;
+      padding: 20px;
       max-width: 900px;
-      margin: auto;
+      margin-left: auto;
+      margin-right: auto;
+      text-shadow: 1px 1px 5px rgba(0,0,0,0.9);
     }
 
     h1 {
-      font-size: 2.8rem;
-      text-shadow: 3px 3px #000;
-      margin-bottom: 40px;
+      font-family: 'Press Start 2P', cursive;
+      font-size: 3rem;
+      margin-bottom: 20px;
+      text-shadow: 4px 4px 0 #000;
     }
 
-    .shop-item {
-      background-color: rgba(0, 0, 0, 0.7);
-      margin: 20px auto;
-      padding: 20px;
-      border-radius: 15px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-    }
-
-    .shop-item h2 {
-      font-size: 1.8rem;
-      margin-bottom: 10px;
-    }
-
-    .shop-item p {
-      font-size: 1rem;
-      margin: 10px 0;
-    }
-
-    .buy-btn {
-      margin-top: 15px;
-      padding: 12px 30px;
-      font-size: 1rem;
+    /* Buton örneği */
+    .btn {
+      margin: 10px;
+      padding: 15px 30px;
+      font-size: 1.25rem;
       color: white;
       background-color: #f39c12;
       border: none;
       border-radius: 10px;
       cursor: pointer;
-      transition: 0.3s;
+      text-decoration: none;
+      display: inline-block;
+      box-shadow: 0 5px 0 #c87f0a;
+      transition: transform 0.3s ease;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      user-select: none;
     }
 
-    .buy-btn:hover {
-      background-color: #e67e22;
+    .btn:hover {
       transform: scale(1.05);
     }
 
     footer {
-      margin-top: 60px;
-      font-size: 0.9rem;
+      margin-top: 50px;
+      font-size: 0.75rem;
       color: #ccc;
-      padding-bottom: 30px;
+      background-color: rgba(0,0,0,0.3);
+      padding: 10px 0;
+      font-family: 'Montserrat', sans-serif;
     }
   </style>
 </head>
 <body>
-
   <nav>
     <a href="index.html">🏠 Ana Sayfa</a>
     <a href="cezalar.html">⚖️ Cezalar</a>
@@ -96,47 +112,13 @@
   </nav>
 
   <div class="container">
-    <h1>🛒 MAĞAZA</h1>
-
-    <div class="shop-item">
-      <h2>👑 Sponsor</h2>
-      <p>En prestijli rozet! İsim etiketi, özel taglar ve ayrıcalıklı destek.</p>
-      <p><strong>Fiyat:</strong> 300₺</p>
-      <button class="buy-btn">Satın Al</button>
-    </div>
-
-    <div class="shop-item">
-      <h2>🔥 NetariaVIP</h2>
-      <p>Sunucuda tanınmanızı sağlar, ekstra kitler ve özel efektler içerir.</p>
-      <p><strong>Fiyat:</strong> 250₺</p>
-      <button class="buy-btn">Satın Al</button>
-    </div>
-
-    <div class="shop-item">
-      <h2>🌟 MVIP+</h2>
-      <p>VIP avantajlarına ek olarak özel etkinlik erişimi.</p>
-      <p><strong>Fiyat:</strong> 150₺</p>
-      <button class="buy-btn">Satın Al</button>
-    </div>
-
-    <div class="shop-item">
-      <h2>💎 MVIP</h2>
-      <p>Giriş mesajı, özel eşyalar ve kit ayrıcalıkları.</p>
-      <p><strong>Fiyat:</strong> 100₺</p>
-      <button class="buy-btn">Satın Al</button>
-    </div>
-
-    <div class="shop-item">
-      <h2>✅ VIP</h2>
-      <p>Sunucuda basit ama faydalı avantajlar için ideal.</p>
-      <p><strong>Fiyat:</strong> 50₺</p>
-      <button class="buy-btn">Satın Al</button>
-    </div>
+    <h1>Mağaza</h1>
+    <p>Buraya mağaza içeriği gelecek.</p>
+    <a href="#" class="btn">Örnek Buton</a>
   </div>
 
   <footer>
     © 2025 Netaria Sunucusu - Tüm Hakları Saklıdır.
   </footer>
-
 </body>
 </html>
