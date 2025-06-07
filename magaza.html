@@ -5,39 +5,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Netaria Mağaza</title>
 
-  <!-- Google Fonts -->
+  <!-- Fontlar -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Press+Start+2P&display=swap" rel="stylesheet" />
 
   <style>
-    /* Body arka plan ve genel stil */
+    /* GENEL BODY & ARKA PLAN */
     html, body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
+      margin: 0; padding: 0; height: 100%;
       font-family: 'Montserrat', 'Press Start 2P', cursive, sans-serif;
       color: white;
-      text-align: center;
       background:
         linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
         url('https://i.imgur.com/vwpDzZx_d.webp?maxwidth=760&fidelity=grand') no-repeat center center fixed;
       background-size: cover;
       background-position: center center;
-      background-repeat: no-repeat;
-      position: relative;
-      z-index: 0;
     }
 
-    /* Sabit menü */
+    /* NAV */
     nav {
       background-color: rgba(0, 0, 0, 0.6);
       padding: 20px;
       position: fixed;
-      top: 0;
-      width: 100%;
-      z-index: 999;
+      top: 0; width: 100%;
       display: flex;
       justify-content: center;
       gap: 30px;
+      z-index: 999;
     }
 
     nav a {
@@ -45,7 +38,6 @@
       text-decoration: none;
       font-variant: small-caps;
       font-weight: 600;
-      letter-spacing: 0.05em;
       font-family: 'Montserrat', sans-serif;
       transition: color 0.3s ease;
     }
@@ -54,71 +46,170 @@
       color: #f39c12;
     }
 
-    /* İçerik alanı */
+    /* KONTEYNER */
     .container {
       margin-top: 120px;
-      padding: 20px;
       max-width: 900px;
-      margin-left: auto;
-      margin-right: auto;
+      margin-left: auto; margin-right: auto;
+      text-align: center;
+      padding: 20px;
       text-shadow: 1px 1px 5px rgba(0,0,0,0.9);
     }
 
+    /* BAŞLIK */
     h1 {
       font-family: 'Press Start 2P', cursive;
       font-size: 3rem;
-      margin-bottom: 20px;
+      margin-bottom: 30px;
       text-shadow: 4px 4px 0 #000;
     }
 
-    /* Buton örneği */
-    .btn {
-      margin: 10px;
-      padding: 15px 30px;
-      font-size: 1.25rem;
-      color: white;
+    /* VİP KUTULARI */
+    .vip-listesi {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .vip-kutu {
+      background: rgba(0,0,0,0.5);
+      padding: 20px 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.7);
+      width: 220px;
+      font-weight: 700;
+      cursor: default;
+      transition: background-color 0.3s ease;
+    }
+
+    .vip-kutu:hover {
       background-color: #f39c12;
+      color: black;
+    }
+
+    .vip-kutu h3 {
+      margin-top: 0;
+      font-family: 'Press Start 2P', cursive;
+      font-size: 1.3rem;
+      margin-bottom: 8px;
+      text-shadow: 1px 1px 2px black;
+    }
+
+    .vip-kutu p {
+      margin: 0;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+
+    /* KÜÇÜK LOGO SOL ÜST KÖŞEDE */
+    .logo-kucuk {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      width: 50px;
+      opacity: 0.3;
+      z-index: 1000;
+      pointer-events: none;
+      user-select: none;
+      filter: drop-shadow(0 0 2px black);
+    }
+
+    /* IP KOPYALANDI BİLDİRİMİ */
+    #copyNotification {
+      display: none;
+      position: fixed;
+      top: 80px;
+      right: 20px;
+      background: #f39c12;
+      color: black;
+      padding: 12px 20px;
+      border-radius: 10px;
+      font-weight: 700;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.5);
+      z-index: 2000;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    /* KOPYALAMA BUTONU */
+    .btn {
+      margin-top: 40px;
+      background-color: #f39c12;
+      color: black;
+      padding: 15px 30px;
+      font-weight: 700;
+      font-family: 'Montserrat', sans-serif;
       border: none;
       border-radius: 10px;
       cursor: pointer;
-      text-decoration: none;
-      display: inline-block;
       box-shadow: 0 5px 0 #c87f0a;
       transition: transform 0.3s ease;
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 600;
-      user-select: none;
     }
 
     .btn:hover {
       transform: scale(1.05);
     }
 
-    footer {
-      margin-top: 50px;
-      font-size: 0.75rem;
-      color: #ccc;
-      background-color: rgba(0,0,0,0.3);
-      padding: 10px 0;
-      font-family: 'Montserrat', sans-serif;
-    }
   </style>
 </head>
 <body>
+
+  <!-- NAV -->
   <nav>
     <a href="index.html">🏠 Ana Sayfa</a>
     <a href="cezalar.html">⚖️ Cezalar</a>
     <a href="magaza.html">🛒 Mağaza</a>
   </nav>
 
+  <!-- KÜÇÜK LOGO -->
+  <img src="https://i.imgur.com/yourLogo.png" alt="Netaria Logo" class="logo-kucuk" />
+
+  <!-- İÇERİK -->
   <div class="container">
-    <h1>Mağaza</h1>
-    <p>Buraya mağaza içeriği gelecek.</p>
-    <a href="#" class="btn">Örnek Buton</a>
+    <h1>Mağaza Paketleri</h1>
+
+    <div class="vip-listesi">
+      <div class="vip-kutu">
+        <h3>💎 Sponsor</h3>
+        <p>300 TL</p>
+      </div>
+      <div class="vip-kutu">
+        <h3>👑 NetariaVip</h3>
+        <p>250 TL</p>
+      </div>
+      <div class="vip-kutu">
+        <h3>🎖️ MVIP+</h3>
+        <p>150 TL</p>
+      </div>
+      <div class="vip-kutu">
+        <h3>🎖️ MVIP</h3>
+        <p>100 TL</p>
+      </div>
+      <div class="vip-kutu">
+        <h3>✨ VIP</h3>
+        <p>50 TL</p>
+      </div>
+    </div>
+
+    <button class="btn" onclick="copyIP()">Sunucu IP'sini Kopyala</button>
   </div>
 
-  <footer>
-    © 2025 Netaria Sunucusu - Tüm Hakları Saklıdır.
-  </footer>
+  <!-- IP KOPYALANDI BİLDİRİM KUTUSU -->
+  <div id="copyNotification">IP adresi kopyalandı! 🎉</div>
+
+  <!-- JS -->
+  <script>
+    function copyIP() {
+      const ip = "play.netaria.net";
+      navigator.clipboard.writeText(ip).then(() => {
+        const notif = document.getElementById('copyNotification');
+        notif.style.display = 'block';
+        setTimeout(() => {
+          notif.style.display = 'none';
+        }, 2500);
+      });
+    }
+  </script>
+
 </body>
 </html>
