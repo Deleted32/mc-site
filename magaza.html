@@ -3,9 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Mağaza - Netaria Network</title>
-  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+  <title>Netaria Mağaza</title>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Montserrat:wght@500&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
@@ -23,106 +22,114 @@
       top: 0;
       width: 100%;
       z-index: 999;
-      display: flex;
-      justify-content: center;
-      gap: 20px;
     }
 
-    .nav-link {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 1rem;
-      color: white;
+    nav a {
+      margin: 0 20px;
+      color: #fff;
       text-decoration: none;
-      font-weight: bold;
-      background-color: rgba(255, 255, 255, 0.1);
-      padding: 10px 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px #000;
-      transition: 0.3s;
-    }
-
-    .nav-link:hover {
-      background-color: rgba(255, 255, 255, 0.3);
-      text-shadow: 2px 2px 4px #000;
-      transform: scale(1.05);
+      font-variant: small-caps;
+      font-size: 1.1rem;
     }
 
     .container {
-      padding-top: 150px;
+      padding-top: 140px;
+      max-width: 900px;
+      margin: auto;
     }
 
     h1 {
-      font-family: 'Press Start 2P', cursive;
-      font-size: 2.5rem;
-      text-shadow: 4px 4px 0 #000;
+      font-size: 2.8rem;
+      text-shadow: 3px 3px #000;
       margin-bottom: 40px;
     }
 
     .shop-item {
-      background-color: rgba(0, 0, 0, 0.6);
-      border: 2px solid white;
+      background-color: rgba(0, 0, 0, 0.7);
       margin: 20px auto;
       padding: 20px;
-      width: 60%;
       border-radius: 15px;
-      box-shadow: 0 0 10px #000;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
     }
 
     .shop-item h2 {
-      margin: 10px 0;
-      color: #ffd700;
+      font-size: 1.8rem;
+      margin-bottom: 10px;
     }
 
     .shop-item p {
-      margin: 5px 0;
+      font-size: 1rem;
+      margin: 10px 0;
     }
 
     .buy-btn {
-      background-color: #27ae60;
-      color: white;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      font-weight: bold;
+      margin-top: 15px;
+      padding: 12px 30px;
       font-size: 1rem;
+      color: white;
+      background-color: #f39c12;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
       transition: 0.3s;
     }
 
     .buy-btn:hover {
-      background-color: #2ecc71;
+      background-color: #e67e22;
+      transform: scale(1.05);
     }
 
     footer {
-      margin-top: 50px;
-      font-size: 0.75rem;
+      margin-top: 60px;
+      font-size: 0.9rem;
       color: #ccc;
-      text-shadow: 1px 1px 2px #000;
+      padding-bottom: 30px;
     }
   </style>
 </head>
 <body>
 
   <nav>
-    <a href="index.html" class="nav-link">🏠 Ana Sayfa</a>
-    <a href="cezalar.html" class="nav-link">🚫 Cezalar</a>
-    <a href="magaza.html" class="nav-link">🛒 Mağaza</a>
+    <a href="index.html">🏠 Ana Sayfa</a>
+    <a href="cezalar.html">📋 Cezalar</a>
+    <a href="magaza.html">🛒 Mağaza</a>
   </nav>
 
   <div class="container">
     <h1>🛒 MAĞAZA</h1>
 
     <div class="shop-item">
-      <h2>VIP Paket</h2>
-      <p>Sunucuda özel ayrıcalıklar elde edin.</p>
-      <p>Fiyat: 30₺</p>
+      <h2>👑 Sponsor</h2>
+      <p>En prestijli rozet! İsim etiketi, özel taglar ve ayrıcalıklı destek.</p>
+      <p><strong>Fiyat:</strong> 300₺</p>
       <button class="buy-btn">Satın Al</button>
     </div>
 
     <div class="shop-item">
-      <h2>Elmas Kılıç</h2>
-      <p>Güçlü bir başlangıç için!</p>
-      <p>Fiyat: 15₺</p>
+      <h2>🔥 NetariaVIP</h2>
+      <p>Sunucuda tanınmanızı sağlar, ekstra kitler ve özel efektler içerir.</p>
+      <p><strong>Fiyat:</strong> 250₺</p>
+      <button class="buy-btn">Satın Al</button>
+    </div>
+
+    <div class="shop-item">
+      <h2>🌟 MVIP+</h2>
+      <p>VIP avantajlarına ek olarak özel etkinlik erişimi.</p>
+      <p><strong>Fiyat:</strong> 150₺</p>
+      <button class="buy-btn">Satın Al</button>
+    </div>
+
+    <div class="shop-item">
+      <h2>💎 MVIP</h2>
+      <p>Giriş mesajı, özel eşyalar ve kit ayrıcalıkları.</p>
+      <p><strong>Fiyat:</strong> 100₺</p>
+      <button class="buy-btn">Satın Al</button>
+    </div>
+
+    <div class="shop-item">
+      <h2>✅ VIP</h2>
+      <p>Sunucuda basit ama faydalı avantajlar için ideal.</p>
+      <p><strong>Fiyat:</strong> 50₺</p>
       <button class="buy-btn">Satın Al</button>
     </div>
   </div>
