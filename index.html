@@ -3,22 +3,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Netaria Network</title>
+  <title>Netaria Index</title>
 
-  <!-- Google Fonts -->
+  <!-- Fontlar -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Press+Start+2P&display=swap" rel="stylesheet" />
 
   <style>
-    /* GENEL */
+    /* GENEL BODY & ARKA PLAN */
     html, body {
       margin: 0; padding: 0; height: 100%;
       font-family: 'Montserrat', 'Press Start 2P', cursive, sans-serif;
+      color: white;
       background:
         linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
         url('https://i.imgur.com/vwpDzZx_d.webp?maxwidth=760&fidelity=grand') no-repeat center center fixed;
       background-size: cover;
-      color: white;
-      text-align: center;
+      background-position: center center;
     }
 
     /* NAV */
@@ -46,91 +46,68 @@
       color: #f39c12;
     }
 
-    /* KÜÇÜK LOGO */
+    /* KÜÇÜK LOGO - SOL ÜST */
     .logo-kucuk {
       position: fixed;
       top: 10px;
       left: 10px;
-      width: 50px;
-      opacity: 0.3;
+      width: 80px; /* Daha büyük yaptık */
+      opacity: 0.85;
       z-index: 1000;
-      pointer-events: none;
-      user-select: none;
-      filter: drop-shadow(0 0 2px black);
+      cursor: pointer;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+      filter: drop-shadow(0 0 3px black);
     }
 
-    /* CONTAINER */
+    .logo-kucuk:hover {
+      transform: scale(1.2);
+      opacity: 1;
+    }
+
+    /* KONTEYNER */
     .container {
-      padding-top: 130px;
-      max-width: 800px;
-      margin-left: auto;
-      margin-right: auto;
+      margin-top: 120px;
+      max-width: 900px;
+      margin-left: auto; margin-right: auto;
+      text-align: center;
+      padding: 20px;
+      text-shadow: 1px 1px 5px rgba(0,0,0,0.9);
     }
 
     /* BAŞLIK */
     h1 {
       font-family: 'Press Start 2P', cursive;
       font-size: 3rem;
-      margin-bottom: 20px;
+      margin-bottom: 30px;
       text-shadow: 4px 4px 0 #000;
     }
 
-    /* PARAGRAF */
-    p {
-      font-size: 1.3rem;
-      font-weight: 600;
-      margin-bottom: 40px;
-      color: #00ff00; /* yeşil */
-      text-shadow: 2px 2px 5px #000;
-    }
-
-    /* BUTONLAR */
+    /* DİSCORD VE SUNUCU BUTONU */
     .btn {
-      margin: 10px 20px;
-      padding: 18px 40px;
-      font-size: 1.3rem;
-      color: white;
+      margin-top: 40px;
       background-color: #f39c12;
+      color: black;
+      padding: 15px 30px;
+      font-weight: 700;
+      font-family: 'Montserrat', sans-serif;
       border: none;
       border-radius: 10px;
       cursor: pointer;
-      text-decoration: none;
-      display: inline-block;
       box-shadow: 0 5px 0 #c87f0a;
       transition: transform 0.3s ease;
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 700;
-    }
-
-    .btn.discord {
-      background-color: #5865F2;
-      box-shadow: 0 5px 0 #3e4ac4;
     }
 
     .btn:hover {
       transform: scale(1.05);
     }
-
-    /* BİLDİRİM */
-    #notification {
-      position: fixed;
-      bottom: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      background-color: rgba(243, 156, 18, 0.9);
-      color: black;
-      font-weight: 700;
-      font-family: 'Montserrat', sans-serif;
-      padding: 15px 25px;
-      border-radius: 12px;
-      box-shadow: 0 0 10px rgba(243,156,18,0.7);
-      display: none;
-      z-index: 10000;
-      user-select: none;
-    }
   </style>
 </head>
 <body>
+
+  <!-- LOGO - ÜZERİNE BASINCA ANA SAYFA -->
+  <a href="index.html">
+    <img src="https://i.imgur.com/RiDtWTO.png" alt="Netaria Logo" class="logo-kucuk" />
+  </a>
 
   <!-- NAV -->
   <nav>
@@ -139,31 +116,20 @@
     <a href="magaza.html">🛒 Mağaza</a>
   </nav>
 
-  <!-- KÜÇÜK LOGO -->
-  <img src= "https://i.imgur.com/RiDtWTO.png" alt="Netaria Logo" class="logo-kucuk" />
-
   <!-- İÇERİK -->
   <div class="container">
     <h1>NETARIA NETWORK</h1>
     <p>Hayalindeki Minecraft dünyası seni bekliyor!</p>
-    <a href="https://discord.gg/senindiscordlinkin" class="btn discord" target="_blank" rel="noopener noreferrer">Discord</a>
-    <button onclick="copyIP()" class="btn">Sunucuya Katıl</button>
-  </div>
 
-  <!-- BİLDİRİM -->
-  <div id="notification">IP kopyalandı: play.netaria.net</div>
+    <a href="https://discord.gg/senindiscordlinkin" class="btn discord" target="_blank">Discord</a>
+    <button class="btn" onclick="copyIP()">Sunucu IP'sini Kopyala</button>
+  </div>
 
   <script>
     function copyIP() {
       const ip = "play.netaria.net";
       navigator.clipboard.writeText(ip).then(() => {
-        const notif = document.getElementById('notification');
-        notif.style.display = 'block';
-        setTimeout(() => {
-          notif.style.display = 'none';
-        }, 2500);
-      }).catch(() => {
-        alert("IP kopyalanamadı. Lütfen manuel olarak kopyalayınız.");
+        alert("IP adresi kopyalandı! 🎉");
       });
     }
   </script>
