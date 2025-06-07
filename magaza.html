@@ -46,6 +46,24 @@
       color: #f39c12;
     }
 
+    /* KÜÇÜK LOGO - SOL ÜST */
+    .logo-kucuk {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      width: 80px;
+      opacity: 0.85;
+      z-index: 1000;
+      cursor: pointer;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+      filter: drop-shadow(0 0 3px black);
+    }
+
+    .logo-kucuk:hover {
+      transform: scale(1.2);
+      opacity: 1;
+    }
+
     /* KONTEYNER */
     .container {
       margin-top: 120px;
@@ -102,19 +120,6 @@
       font-weight: 600;
     }
 
-    /* KÜÇÜK LOGO SOL ÜST KÖŞEDE */
-    .logo-kucuk {
-      position: fixed;
-      top: 10px;
-      left: 10px;
-      width: 50px;
-      opacity: 0.3;
-      z-index: 1000;
-      pointer-events: none;
-      user-select: none;
-      filter: drop-shadow(0 0 2px black);
-    }
-
     /* IP KOPYALANDI BİLDİRİMİ */
     #copyNotification {
       display: none;
@@ -149,10 +154,14 @@
     .btn:hover {
       transform: scale(1.05);
     }
-
   </style>
 </head>
 <body>
+
+  <!-- LOGO - ÜZERİNE BASINCA ANA SAYFA -->
+  <a href="index.html">
+    <img src="https://i.imgur.com/RiDtWTO.png" alt="Netaria Logo" class="logo-kucuk" />
+  </a>
 
   <!-- NAV -->
   <nav>
@@ -160,9 +169,6 @@
     <a href="cezalar.html">⚖️ Cezalar</a>
     <a href="magaza.html">🛒 Mağaza</a>
   </nav>
-
-  <!-- KÜÇÜK LOGO -->
-  <img src="https://i.imgur.com/RiDtWTO.png" alt="Netaria Logo" class="logo-kucuk" />
 
   <!-- İÇERİK -->
   <div class="container">
