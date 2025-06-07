@@ -9,20 +9,20 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Press+Start+2P&display=swap" rel="stylesheet" />
 
   <style>
-    body {
+    html, body {
       margin: 0;
+      padding: 0;
+      height: 100%;
       font-family: 'Montserrat', 'Press Start 2P', cursive, sans-serif;
       color: white;
       text-align: center;
-      min-height: 100vh;
       display: flex;
       flex-direction: column;
-
       background:
         linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
-        url('https://i.imgur.com/vwpDzZx_d.webp?maxwidth=760&fidelity=grand') no-repeat center top fixed;
-      background-size: 60% auto;
-      background-position: center top;
+        url('https://i.imgur.com/vwpDzZx_d.webp?maxwidth=760&fidelity=grand') no-repeat center center fixed;
+      background-size: cover;
+      background-position: center center;
       background-repeat: no-repeat;
       position: relative;
       z-index: 0;
