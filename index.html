@@ -1,22 +1,28 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Netaria Network</title>
-  <!-- Fontlar -->
-  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Press+Start+2P&display=swap" rel="stylesheet" />
+
   <style>
+    /* Body ve genel ayarlar */
     body {
       margin: 0;
-      font-family: 'Press Start 2P', cursive;
-      background: url('https://i.imgur.com/FjqSSlK.png') no-repeat center center fixed;
+      font-family: 'Montserrat', 'Press Start 2P', cursive, sans-serif;
+      background: url('https://i.imgur.com/vwpDzZx_d.webp?maxwidth=760&fidelity=grand') no-repeat center center fixed;
       background-size: cover;
       color: white;
       text-align: center;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
 
+    /* Nav bar */
     nav {
       background-color: rgba(0, 0, 0, 0.6);
       padding: 20px;
@@ -26,49 +32,55 @@
       z-index: 999;
       display: flex;
       justify-content: center;
+      gap: 30px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-variant: small-caps;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      font-family: 'Montserrat', sans-serif;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #f39c12;
+    }
+
+    /* Ana container */
+    .container {
+      margin-top: 120px;
+      padding: 20px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
       gap: 20px;
     }
 
-    .nav-link {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 1rem;
-      text-transform: none;
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      background-color: rgba(255, 255, 255, 0.1);
-      padding: 10px 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px #000;
-      transition: 0.3s;
-    }
-
-    .nav-link:hover {
-      background-color: rgba(255, 255, 255, 0.3);
-      text-shadow: 2px 2px 4px #000;
-      transform: scale(1.05);
-    }
-
-    .container {
-      padding-top: 150px;
-    }
-
     h1 {
+      font-family: 'Press Start 2P', cursive;
       font-size: 3rem;
       text-shadow: 4px 4px 0 #000;
+      margin: 0;
     }
 
     p {
-      font-size: 1rem;
-      color: #8fff8f;
-      margin-bottom: 30px;
-      text-shadow: 1px 1px 2px #000;
+      font-size: 1.5rem;
+      color: #00ff00; /* yeşil */
+      font-weight: 600;
+      margin: 10px 0 30px;
+      text-shadow: 1px 1px 2px #000000cc;
     }
 
+    /* Butonlar */
     .btn {
-      margin: 20px;
+      margin: 10px;
       padding: 20px 40px;
-      font-size: 1.2rem;
+      font-size: 1.5rem;
       color: white;
       background-color: #f39c12;
       border: none;
@@ -77,8 +89,10 @@
       text-decoration: none;
       display: inline-block;
       box-shadow: 0 5px 0 #c87f0a;
-      transition: transform 0.2s;
+      transition: transform 0.3s ease;
       font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      user-select: none;
     }
 
     .btn.discord {
@@ -90,37 +104,35 @@
       transform: scale(1.05);
     }
 
+    /* Footer */
     footer {
-      margin-top: 50px;
+      margin-top: auto;
+      padding: 15px 0;
       font-size: 0.75rem;
       color: #ccc;
-      text-shadow: 1px 1px 2px #000;
+      background-color: rgba(0,0,0,0.3);
+      font-family: 'Montserrat', sans-serif;
     }
   </style>
 </head>
 <body>
-
-  <!-- Menü -->
   <nav>
-    <a href="index.html" class="nav-link">🏠 Ana Sayfa</a>
-    <a href="cezalar.html" class="nav-link">🚫 Cezalar</a>
-    <a href="magaza.html" class="nav-link">🛒 Mağaza</a>
+    <a href="index.html">🏠 Ana Sayfa</a>
+    <a href="cezalar.html">⚖️ Cezalar</a>
+    <a href="magaza.html">🛒 Mağaza</a>
   </nav>
 
-  <!-- İçerik -->
   <div class="container">
     <h1>NETARIA NETWORK</h1>
     <p>Hayalindeki Minecraft dünyası seni bekliyor!</p>
-    <a href="https://discord.gg/senindiscordlinkin" class="btn discord" target="_blank">Discord</a>
-    <a onclick="copyIP()" class="btn">Sunucuya Katıl</a>
+    <a href="https://discord.gg/senindiscordlinkin" class="btn discord" target="_blank" rel="noopener noreferrer">Discord</a>
+    <button onclick="copyIP()" class="btn">Sunucuya Katıl</button>
   </div>
 
-  <!-- Alt Bilgi -->
   <footer>
     © 2025 Netaria Sunucusu - Tüm Hakları Saklıdır.
   </footer>
 
-  <!-- IP Kopyalama -->
   <script>
     function copyIP() {
       const ip = "play.netaria.net";
@@ -129,6 +141,5 @@
       });
     }
   </script>
-
 </body>
 </html>
