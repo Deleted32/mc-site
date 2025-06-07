@@ -5,39 +5,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Netaria Cezalar</title>
 
-  <!-- Google Fonts -->
+  <!-- Fontlar -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Press+Start+2P&display=swap" rel="stylesheet" />
 
   <style>
-    /* Genel body ayarları ve arka plan */
+    /* GENEL BODY & ARKA PLAN */
     html, body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
+      margin: 0; padding: 0; height: 100%;
       font-family: 'Montserrat', 'Press Start 2P', cursive, sans-serif;
       color: white;
-      text-align: center;
       background:
         linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
         url('https://i.imgur.com/vwpDzZx_d.webp?maxwidth=760&fidelity=grand') no-repeat center center fixed;
       background-size: cover;
       background-position: center center;
-      background-repeat: no-repeat;
-      position: relative;
-      z-index: 0;
     }
 
-    /* Sabit menü */
+    /* NAV */
     nav {
       background-color: rgba(0, 0, 0, 0.6);
       padding: 20px;
       position: fixed;
-      top: 0;
-      width: 100%;
-      z-index: 999;
+      top: 0; width: 100%;
       display: flex;
       justify-content: center;
       gap: 30px;
+      z-index: 999;
     }
 
     nav a {
@@ -45,7 +38,6 @@
       text-decoration: none;
       font-variant: small-caps;
       font-weight: 600;
-      letter-spacing: 0.05em;
       font-family: 'Montserrat', sans-serif;
       transition: color 0.3s ease;
     }
@@ -54,157 +46,155 @@
       color: #f39c12;
     }
 
-    /* İçerik alanı */
+    /* KONTEYNER */
     .container {
       margin-top: 120px;
-      padding: 20px;
       max-width: 900px;
-      margin-left: auto;
-      margin-right: auto;
+      margin-left: auto; margin-right: auto;
+      padding: 20px;
+      display: flex;
+      gap: 30px;
+      justify-content: space-between;
+      color: white;
       text-shadow: 1px 1px 5px rgba(0,0,0,0.9);
-      font-family: 'Montserrat', sans-serif;
     }
 
+    /* BAŞLIK */
     h1 {
       font-family: 'Press Start 2P', cursive;
       font-size: 3rem;
-      margin-bottom: 20px;
+      margin-bottom: 30px;
+      text-align: center;
       text-shadow: 4px 4px 0 #000;
+      width: 100%;
     }
 
-    /* Ceza listesi kutusu */
+    /* CEZA LİSTESİ */
     .ceza-listesi {
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-
-    .ceza-kutu {
+      flex: 1;
       background: rgba(0,0,0,0.5);
+      padding: 20px;
       border-radius: 12px;
-      padding: 15px 20px;
-      flex: 1 1 250px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.7);
-      text-align: left;
-      color: #f0f0f0;
-      font-weight: 600;
-      transition: background-color 0.3s ease;
+      font-family: 'Montserrat', sans-serif;
     }
 
-    .ceza-kutu:hover {
-      background: rgba(243, 156, 18, 0.8);
-      color: black;
-      cursor: default;
-    }
-
-    .ceza-kutu h3 {
+    .ceza-listesi h2 {
       margin-top: 0;
-      margin-bottom: 8px;
-      font-family: 'Montserrat', sans-serif;
-      font-variant: small-caps;
-      font-size: 1.25rem;
-      color: #f39c12;
-      text-shadow: 1px 1px 2px black;
-    }
-
-    .ceza-kutu p {
-      margin: 0;
-      font-size: 1.1rem;
-      color: #eee;
-    }
-
-    /* Sağ tarafta küçük tablo stili */
-    .ceza-tablosu {
-      position: fixed;
-      top: 120px;
-      right: 15px;
-      background: rgba(0,0,0,0.6);
-      border-radius: 10px;
-      padding: 15px 25px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.7);
-      max-width: 220px;
-      font-family: 'Montserrat', sans-serif;
-      color: #f39c12;
       font-weight: 700;
-      text-align: left;
-      line-height: 1.6;
-      user-select: none;
-      z-index: 500;
+      font-size: 1.6rem;
+      margin-bottom: 15px;
+      border-bottom: 2px solid #f39c12;
+      padding-bottom: 8px;
+    }
+
+    .ceza-listesi ul {
+      list-style: none;
+      padding-left: 0;
+      font-size: 1.2rem;
+    }
+
+    .ceza-listesi ul li {
+      margin-bottom: 12px;
+      padding-left: 12px;
+      position: relative;
+      font-weight: 600;
+    }
+
+    .ceza-listesi ul li::before {
+      content: "⛔";
+      position: absolute;
+      left: 0;
+      color: #f39c12;
+    }
+
+    /* CEZA TABLOSU SAĞDA */
+    .ceza-tablosu {
+      width: 280px;
+      background: rgba(0,0,0,0.5);
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.7);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      color: #f39c12;
     }
 
     .ceza-tablosu h3 {
       margin-top: 0;
-      margin-bottom: 12px;
-      font-size: 1.3rem;
-      text-shadow: 1px 1px 2px black;
-      color: #f39c12;
+      margin-bottom: 15px;
+      text-align: center;
+      font-size: 1.5rem;
+      border-bottom: 2px solid #f39c12;
+      padding-bottom: 8px;
     }
 
-    .ceza-tablosu div {
-      display: flex;
-      justify-content: space-between;
-      padding: 4px 0;
-      border-bottom: 1px solid rgba(243, 156, 18, 0.3);
+    .ceza-tablosu table {
+      width: 100%;
+      border-collapse: collapse;
     }
 
-    .ceza-tablosu div:last-child {
-      border-bottom: none;
+    .ceza-tablosu table td {
+      padding: 10px 5px;
+      border-bottom: 1px solid #f39c12;
+      text-align: left;
+      font-size: 1.1rem;
     }
 
-    .ceza-tablosu span {
-      font-weight: 400;
-      color: #fff;
+    /* KÜÇÜK LOGO SOL ÜST KÖŞEDE */
+    .logo-kucuk {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      width: 50px;
+      opacity: 0.3;
+      z-index: 1000;
+      pointer-events: none;
+      user-select: none;
+      filter: drop-shadow(0 0 2px black);
     }
+
   </style>
 </head>
 <body>
+
+  <!-- NAV -->
   <nav>
     <a href="index.html">🏠 Ana Sayfa</a>
     <a href="cezalar.html">⚖️ Cezalar</a>
     <a href="magaza.html">🛒 Mağaza</a>
   </nav>
 
-  <div class="container">
-    <h1>Cezalar</h1>
+  <!-- KÜÇÜK LOGO -->
+  <img src="https://i.imgur.com/yourLogo.png" alt="Netaria Logo" class="logo-kucuk" />
 
+  <!-- İÇERİK -->
+  <h1>Cezalar</h1>
+
+  <div class="container">
     <div class="ceza-listesi">
-      <div class="ceza-kutu">
-        <h3>Hile Kullanımı</h3>
-        <p>15 gün ban</p>
-      </div>
-      <div class="ceza-kutu">
-        <h3>Küfür</h3>
-        <p>5 saat ban</p>
-      </div>
-      <div class="ceza-kutu">
-        <h3>Ailevi Küfür</h3>
-        <p>1 gün ban</p>
-      </div>
-      <div class="ceza-kutu">
-        <h3>TP Tuzağı</h3>
-        <p>7 gün ban</p>
-      </div>
-      <div class="ceza-kutu">
-        <h3>Dolandırıcılık</h3>
-        <p>14 gün ban</p>
-      </div>
-      <!-- İstersen buraya başka cezalar ekleyebilirsin -->
+      <h2>Ceza Türleri</h2>
+      <ul>
+        <li>Hile Kullanımı - 15 Gün Ban</li>
+        <li>Küfür - 5 Saat Ban</li>
+        <li>Ailevi Küfür - 1 Gün Ban</li>
+        <li>TP Tuzağı - 7 Gün Ban</li>
+        <li>Dolandırıcılık - 14 Gün Ban</li>
+        <!-- İstersen buraya başka ceza türleri ekleyebilirsin -->
+      </ul>
+    </div>
+
+    <div class="ceza-tablosu">
+      <h3>Ceza Süreleri</h3>
+      <table>
+        <tr><td>Hile Kullanımı</td><td>15 Gün Ban</td></tr>
+        <tr><td>Küfür</td><td>5 Saat Ban</td></tr>
+        <tr><td>Ailevi Küfür</td><td>1 Gün Ban</td></tr>
+        <tr><td>TP Tuzağı</td><td>7 Gün Ban</td></tr>
+        <tr><td>Dolandırıcılık</td><td>14 Gün Ban</td></tr>
+      </table>
     </div>
   </div>
 
-  <!-- Sağda küçük ceza tablosu -->
-  <div class="ceza-tablosu" aria-label="Ceza Süreleri Tablosu">
-    <h3>Ceza Süreleri</h3>
-    <div><strong>Hile Kullanımı:</strong> <span>15 gün</span></div>
-    <div><strong>Küfür:</strong> <span>5 saat</span></div>
-    <div><strong>Ailevi Küfür:</strong> <span>1 gün</span></div>
-    <div><strong>TP Tuzağı:</strong> <span>7 gün</span></div>
-    <div><strong>Dolandırıcılık:</strong> <span>14 gün</span></div>
-  </div>
-
-  <footer>
-    © 2025 Netaria Sunucusu - Tüm Hakları Saklıdır.
-  </footer>
 </body>
 </html>
