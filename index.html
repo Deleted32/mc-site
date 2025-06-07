@@ -9,35 +9,28 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Press+Start+2P&display=swap" rel="stylesheet" />
 
   <style>
+    /* GENEL */
     html, body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
+      margin: 0; padding: 0; height: 100%;
       font-family: 'Montserrat', 'Press Start 2P', cursive, sans-serif;
-      color: white;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
       background:
         linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
         url('https://i.imgur.com/vwpDzZx_d.webp?maxwidth=760&fidelity=grand') no-repeat center center fixed;
       background-size: cover;
-      background-position: center center;
-      background-repeat: no-repeat;
-      position: relative;
-      z-index: 0;
+      color: white;
+      text-align: center;
     }
 
+    /* NAV */
     nav {
       background-color: rgba(0, 0, 0, 0.6);
       padding: 20px;
       position: fixed;
-      top: 0;
-      width: 100%;
-      z-index: 999;
+      top: 0; width: 100%;
       display: flex;
       justify-content: center;
       gap: 30px;
+      z-index: 999;
     }
 
     nav a {
@@ -45,7 +38,6 @@
       text-decoration: none;
       font-variant: small-caps;
       font-weight: 600;
-      letter-spacing: 0.05em;
       font-family: 'Montserrat', sans-serif;
       transition: color 0.3s ease;
     }
@@ -54,37 +46,49 @@
       color: #f39c12;
     }
 
-    .container {
-      margin-top: 120px;
-      padding: 20px;
-      flex-grow: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 20px;
-      text-shadow: 1px 1px 5px rgba(0,0,0,0.9);
+    /* KÜÇÜK LOGO */
+    .logo-kucuk {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      width: 50px;
+      opacity: 0.3;
+      z-index: 1000;
+      pointer-events: none;
+      user-select: none;
+      filter: drop-shadow(0 0 2px black);
     }
 
+    /* CONTAINER */
+    .container {
+      padding-top: 130px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* BAŞLIK */
     h1 {
       font-family: 'Press Start 2P', cursive;
       font-size: 3rem;
-      margin: 0;
+      margin-bottom: 20px;
       text-shadow: 4px 4px 0 #000;
     }
 
+    /* PARAGRAF */
     p {
-      font-size: 1.5rem;
-      color: #00ff00;
+      font-size: 1.3rem;
       font-weight: 600;
-      margin: 10px 0 30px;
-      text-shadow: 1px 1px 4px #000000cc;
+      margin-bottom: 40px;
+      color: #00ff00; /* yeşil */
+      text-shadow: 2px 2px 5px #000;
     }
 
+    /* BUTONLAR */
     .btn {
-      margin: 10px;
-      padding: 20px 40px;
-      font-size: 1.5rem;
+      margin: 10px 20px;
+      padding: 18px 40px;
+      font-size: 1.3rem;
       color: white;
       background-color: #f39c12;
       border: none;
@@ -95,8 +99,7 @@
       box-shadow: 0 5px 0 #c87f0a;
       transition: transform 0.3s ease;
       font-family: 'Montserrat', sans-serif;
-      font-weight: 600;
-      user-select: none;
+      font-weight: 700;
     }
 
     .btn.discord {
@@ -108,23 +111,38 @@
       transform: scale(1.05);
     }
 
-    footer {
-      margin-top: auto;
-      padding: 15px 0;
-      font-size: 0.75rem;
-      color: #ccc;
-      background-color: rgba(0,0,0,0.3);
+    /* BİLDİRİM */
+    #notification {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: rgba(243, 156, 18, 0.9);
+      color: black;
+      font-weight: 700;
       font-family: 'Montserrat', sans-serif;
+      padding: 15px 25px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(243,156,18,0.7);
+      display: none;
+      z-index: 10000;
+      user-select: none;
     }
   </style>
 </head>
 <body>
+
+  <!-- NAV -->
   <nav>
     <a href="index.html">🏠 Ana Sayfa</a>
     <a href="cezalar.html">⚖️ Cezalar</a>
     <a href="magaza.html">🛒 Mağaza</a>
   </nav>
 
+  <!-- KÜÇÜK LOGO -->
+  <img src="https://i.imgur.com/yourLogo.png" alt="Netaria Logo" class="logo-kucuk" />
+
+  <!-- İÇERİK -->
   <div class="container">
     <h1>NETARIA NETWORK</h1>
     <p>Hayalindeki Minecraft dünyası seni bekliyor!</p>
@@ -132,17 +150,23 @@
     <button onclick="copyIP()" class="btn">Sunucuya Katıl</button>
   </div>
 
-  <footer>
-    © 2025 Netaria Sunucusu - Tüm Hakları Saklıdır.
-  </footer>
+  <!-- BİLDİRİM -->
+  <div id="notification">IP kopyalandı: play.netaria.net</div>
 
   <script>
     function copyIP() {
       const ip = "play.netaria.net";
       navigator.clipboard.writeText(ip).then(() => {
-        alert("IP kopyalandı: " + ip);
+        const notif = document.getElementById('notification');
+        notif.style.display = 'block';
+        setTimeout(() => {
+          notif.style.display = 'none';
+        }, 2500);
+      }).catch(() => {
+        alert("IP kopyalanamadı. Lütfen manuel olarak kopyalayınız.");
       });
     }
   </script>
+
 </body>
 </html>
