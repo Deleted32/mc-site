@@ -1,24 +1,43 @@
-<nav style="background-color: rgba(0, 0, 0, 0.6); padding: 20px; position: fixed; top: 0; width: 100%; z-index: 999;">
-  <a href="index.html" style="margin: 0 20px; color: white; text-decoration: none;">Ana Sayfa</a>
-  <a href="cezalar.html" style="margin: 0 20px; color: white; text-decoration: none;">Cezalar</a>
-  <a href="magaza.html" style="margin: 0 20px; color: white; text-decoration: none;">Mağaza</a>
+<nav style="background-color: rgba(0, 0, 0, 0.6); padding: 20px; position: fixed; top: 0; width: 100%; z-index: 999; display: flex; justify-content: center; gap: 20px;">
+  <a href="index.html" class="nav-link">🏠 Ana Sayfa</a>
+  <a href="cezalar.html" class="nav-link">🚫 Cezalar</a>
+  <a href="magaza.html" class="nav-link">🛒 Mağaza</a>
 </nav>
-<div style="margin-top: 100px;"></div> <!-- Menü boşluğu -->
+<div style="margin-top: 100px;"></div>
+
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Netaria Network</title>
-  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
   <style>
     body {
       margin: 0;
       font-family: 'Press Start 2P', cursive;
-      background: url('https://i.imgur.com/3ZQ3Z4S.png') no-repeat center center fixed;
+      background: url('https://i.imgur.com/FjqSSlK.png') no-repeat center center fixed;
       background-size: cover;
       color: white;
       text-align: center;
+    }
+
+    .nav-link {
+      color: white;
+      text-decoration: none;
+      font-variant: small-caps;
+      font-weight: bold;
+      background-color: rgba(255, 255, 255, 0.1);
+      padding: 10px 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #000;
+      transition: 0.3s;
+    }
+
+    .nav-link:hover {
+      background-color: rgba(255, 255, 255, 0.3);
+      text-shadow: 2px 2px 4px #000;
+      transform: scale(1.05);
     }
 
     .container {
@@ -28,6 +47,13 @@
     h1 {
       font-size: 3rem;
       text-shadow: 4px 4px 0 #000;
+    }
+
+    p {
+      font-size: 1rem;
+      color: #00ff00;
+      text-shadow: 1px 1px 2px #000;
+      margin: 20px;
     }
 
     .btn {
@@ -42,6 +68,7 @@
       text-decoration: none;
       display: inline-block;
       box-shadow: 0 5px 0 #c87f0a;
+      transition: transform 0.2s ease;
     }
 
     .btn.discord {
@@ -57,15 +84,16 @@
       margin-top: 50px;
       font-size: 0.75rem;
       color: #ccc;
+      text-shadow: 1px 1px 2px #000;
     }
   </style>
 </head>
 <body>
   <div class="container">
     <h1>NETARIA NETWORK</h1>
-    <p style="color: green;">Hayalindeki Minecraft dünyası seni bekliyor!</p>
-    <a href="https://discord.gg/senindiscordlinkin" class="btn discord" target="_blank">Discord</a>
-    <a onclick="copyIP()" class="btn">Sunucuya Katıl</a>
+    <p>Hayalindeki Minecraft dünyası seni bekliyor!</p>
+    <a href="https://discord.gg/senindiscordlinkin" class="btn discord" target="_blank">💬 Discord</a>
+    <a onclick="copyIP()" class="btn">🎮 Sunucuya Katıl</a>
   </div>
 
   <footer>
@@ -82,10 +110,3 @@
   </script>
 </body>
 </html>
-<style>
-  body {
-    background: url('https://i.imgur.com/FjqSSlK.png') no-repeat center center fixed;
-    background-size: cover;
-  }
-</style>
-
