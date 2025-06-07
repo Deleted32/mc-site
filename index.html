@@ -132,3 +132,177 @@
 
 </body>
 </html>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+  body {
+    margin: 0;
+    font-family: 'Press Start 2P', cursive;
+    background: linear-gradient(135deg, #1f1c2c, #928dab);
+    color: #f0f0f0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    /* Kelime kırılma sorununu önlemek için: */
+    word-break: normal;
+    overflow-wrap: break-word;
+  }
+
+  nav {
+    background-color: rgba(0,0,0,0.7);
+    padding: 15px 30px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+  }
+
+  nav a {
+    color: #fff;
+    text-decoration: none;
+    font-variant: small-caps;
+    font-weight: 600;
+    font-size: 1.1rem;
+    white-space: nowrap; /* Menüde kelimelerin bölünmesini önler */
+    transition: color 0.3s ease;
+    user-select: none;
+  }
+
+  nav a:hover {
+    color: #f39c12;
+  }
+
+  .main-content {
+    max-width: 1000px;
+    margin: 120px auto 50px;
+    padding: 0 20px;
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  /* Ceza listesi */
+  .ceza-listesi {
+    flex: 2 1 600px;
+    background-color: rgba(20, 20, 30, 0.85);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    overflow-x: auto;
+    font-variant: small-caps;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 550px;
+    /* Tablo içi metinlerde de kelime kırılmasını engelle */
+    word-break: normal;
+    white-space: nowrap;
+  }
+
+  thead {
+    background: #f39c12;
+    color: #1a1a1a;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  th, td {
+    padding: 15px 20px;
+    text-align: left;
+    border-bottom: 1px solid #333;
+    user-select: text;
+  }
+
+  tbody tr:hover {
+    background-color: #f39c12aa;
+    color: #1a1a1a;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  /* Ceza türleri kutusu sağda */
+  .ceza-turleri {
+    flex: 1 1 250px;
+    background-color: rgba(0,0,0,0.7);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.6);
+    height: fit-content;
+    color: #fff;
+    font-variant: small-caps;
+  }
+
+  .ceza-turleri h2 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    text-align: center;
+    font-size: 1.6rem;
+    text-shadow: 2px 2px 5px #00000099;
+  }
+
+  .ceza-turleri table {
+    width: 100%;
+    border-collapse: collapse;
+    white-space: nowrap;
+  }
+
+  .ceza-turleri th, .ceza-turleri td {
+    padding: 8px 10px;
+    border-bottom: 1px solid #555;
+    font-size: 0.95rem;
+    text-align: left;
+  }
+
+  .ceza-turleri th {
+    background-color: #f39c12;
+    color: #1a1a1a;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  /* Status renkleri ceza listesinde */
+  .status-banned {
+    color: #e74c3c;
+    font-weight: 700;
+  }
+
+  .status-muted {
+    color: #3498db;
+    font-weight: 700;
+  }
+
+  .status-warning {
+    color: #f1c40f;
+    font-weight: 700;
+  }
+
+  footer {
+    margin-top: auto;
+    padding: 20px 10px;
+    text-align: center;
+    color: #ccc;
+    background-color: rgba(0,0,0,0.6);
+    font-size: 0.9rem;
+    user-select: none;
+    font-variant: small-caps;
+  }
+
+  @media (max-width: 900px) {
+    .main-content {
+      flex-direction: column;
+      margin: 120px 20px 50px;
+    }
+
+    .ceza-turleri {
+      margin-top: 30px;
+      width: 100%;
+    }
+  }
+</style>
