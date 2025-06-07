@@ -4,11 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Netaria Cezalar</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
   <style>
     body {
       margin: 0;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'Press Start 2P', cursive;
       background: linear-gradient(135deg, #1f1c2c, #928dab);
       color: #f0f0f0;
       min-height: 100vh;
@@ -41,31 +41,30 @@
       color: #f39c12;
     }
 
-    .container {
-      max-width: 900px;
+    .main-content {
+      max-width: 1000px;
       margin: 120px auto 50px;
       padding: 0 20px;
+      display: flex;
+      gap: 40px;
+      flex-wrap: wrap;
+      justify-content: center;
     }
 
-    h1 {
-      text-align: center;
-      font-weight: 700;
-      font-size: 2.5rem;
-      margin-bottom: 30px;
-      text-shadow: 2px 2px 5px #00000099;
-    }
-
-    .table-wrapper {
-      overflow-x: auto;
-      border-radius: 12px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    /* Ceza listesi */
+    .ceza-listesi {
+      flex: 2 1 600px;
       background-color: rgba(20, 20, 30, 0.85);
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+      overflow-x: auto;
     }
 
     table {
       width: 100%;
       border-collapse: collapse;
-      min-width: 600px;
+      min-width: 550px;
     }
 
     thead {
@@ -89,6 +88,45 @@
       transition: background-color 0.3s ease;
     }
 
+    /* Ceza türleri kutusu sağda */
+    .ceza-turleri {
+      flex: 1 1 250px;
+      background-color: rgba(0,0,0,0.7);
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.6);
+      height: fit-content;
+      color: #fff;
+    }
+
+    .ceza-turleri h2 {
+      margin-top: 0;
+      margin-bottom: 15px;
+      text-align: center;
+      font-size: 1.6rem;
+      text-shadow: 2px 2px 5px #00000099;
+    }
+
+    .ceza-turleri table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .ceza-turleri th, .ceza-turleri td {
+      padding: 8px 10px;
+      border-bottom: 1px solid #555;
+      font-size: 0.95rem;
+      text-align: left;
+    }
+
+    .ceza-turleri th {
+      background-color: #f39c12;
+      color: #1a1a1a;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    /* Status renkleri ceza listesinde */
     .status-banned {
       color: #e74c3c;
       font-weight: 700;
@@ -114,19 +152,15 @@
       user-select: none;
     }
 
-    /* Responsive */
-    @media (max-width: 600px) {
-      nav {
-        gap: 15px;
-        padding: 15px 10px;
+    @media (max-width: 900px) {
+      .main-content {
+        flex-direction: column;
+        margin: 120px 20px 50px;
       }
 
-      h1 {
-        font-size: 2rem;
-      }
-
-      th, td {
-        padding: 10px 12px;
+      .ceza-turleri {
+        margin-top: 30px;
+        width: 100%;
       }
     }
   </style>
@@ -139,9 +173,10 @@
   <a href="magaza.html">🛒 Mağaza</a>
 </nav>
 
-<div class="container">
-  <h1>Sunucu Cezaları</h1>
-  <div class="table-wrapper">
+<div class="main-content">
+
+  <section class="ceza-listesi">
+    <h1>Sunucu Cezaları</h1>
     <table>
       <thead>
         <tr>
@@ -157,31 +192,67 @@
         <tr>
           <td>Ahmet123</td>
           <td class="status-banned">Ban</td>
-          <td>Kural ihlali</td>
+          <td>Hile kullanımı</td>
           <td>2025-06-01</td>
-          <td>7 Gün</td>
+          <td>15 Gün</td>
           <td>Aktif</td>
         </tr>
         <tr>
           <td>GamersTR</td>
           <td class="status-muted">Mute</td>
-          <td>Spam</td>
+          <td>Küfür</td>
           <td>2025-06-05</td>
-          <td>1 Saat</td>
+          <td>5 Saat</td>
           <td>Pasif</td>
         </tr>
         <tr>
           <td>NetariaFan</td>
-          <td class="status-warning">Uyarı</td>
-          <td>Küfür</td>
+          <td class="status-muted">Mute</td>
+          <td>Ailevi Küfür</td>
           <td>2025-06-07</td>
-          <td>-</td>
-          <td>Pasif</td>
+          <td>1 Gün</td>
+          <td>Aktif</td>
         </tr>
-        <!-- Daha fazla ceza satırı buraya eklenebilir -->
+        <tr>
+          <td>KorsanTR</td>
+          <td class="status-banned">Ban</td>
+          <td>TP Tuzağı</td>
+          <td>2025-06-08</td>
+          <td>7 Gün</td>
+          <td>Aktif</td>
+        </tr>
+        <tr>
+          <td>Dolandirici01</td>
+          <td class="status-banned">Ban</td>
+          <td>Dolandırıcılık</td>
+          <td>2025-06-09</td>
+          <td>14 Gün</td>
+          <td>Aktif</td>
+        </tr>
       </tbody>
     </table>
-  </div>
+  </section>
+
+  <aside class="ceza-turleri">
+    <h2>Ceza Türleri ve Süreleri</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Ceza Türü</th>
+          <th>Süre</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Hile Kullanımı</td><td>15 Gün Ban</td></tr>
+        <tr><td>Küfür</td><td>5 Saat Mute</td></tr>
+        <tr><td>Ailevi Küfür</td><td>1 Gün Mute</td></tr>
+        <tr><td>TP Tuzağı</td><td>7 Gün Ban</td></tr>
+        <tr><td>Dolandırıcılık</td><td>14 Gün Ban</td></tr>
+        <!-- Ekstra ceza türleri ekleyebilirsin -->
+      </tbody>
+    </table>
+  </aside>
+
 </div>
 
 <footer>
