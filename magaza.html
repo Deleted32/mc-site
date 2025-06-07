@@ -1,46 +1,129 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <title>Netaria - Mağaza</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mağaza | Netaria Network</title>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
   <style>
     body {
-      background: #222;
+      margin: 0;
+      font-family: 'Press Start 2P', cursive;
+      background: url('https://i.imgur.com/FjqSSlK.png') no-repeat center center fixed;
+      background-size: cover;
       color: white;
-      font-family: Arial, sans-serif;
       text-align: center;
-      padding: 50px;
     }
-    .store-item {
-      background: #333;
-      margin: 20px auto;
+
+    nav {
+      background-color: rgba(0, 0, 0, 0.6);
       padding: 20px;
-      width: 300px;
-      border-radius: 10px;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 999;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
     }
-    .btn {
-      background-color: #f39c12;
+
+    .nav-link {
       color: white;
-      padding: 10px;
-      border: none;
-      cursor: pointer;
       text-decoration: none;
+      font-variant: small-caps;
+      font-weight: bold;
+      background-color: rgba(255, 255, 255, 0.1);
+      padding: 10px 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #000;
+      transition: 0.3s;
+    }
+
+    .nav-link:hover {
+      background-color: rgba(255, 255, 255, 0.3);
+      text-shadow: 2px 2px 4px #000;
+      transform: scale(1.05);
+    }
+
+    .container {
+      padding-top: 150px;
+      max-width: 1000px;
+      margin: auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+    }
+
+    .card {
+      background-color: rgba(0, 0, 0, 0.7);
+      width: 250px;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 0 20px #000;
+      transition: transform 0.2s;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    .card h2 {
+      font-size: 1rem;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      font-size: 0.75rem;
+      margin-bottom: 15px;
+    }
+
+    .buy-btn {
+      background-color: #f39c12;
+      border: none;
+      padding: 10px;
+      font-size: 0.8rem;
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    footer {
+      margin-top: 50px;
+      font-size: 0.75rem;
+      color: #ccc;
+      text-shadow: 1px 1px 2px #000;
     }
   </style>
 </head>
 <body>
-  <h1>Netaria Mağazası</h1>
+  <nav>
+    <a href="index.html" class="nav-link">🏠 Ana Sayfa</a>
+    <a href="cezalar.html" class="nav-link">🚫 Cezalar</a>
+    <a href="magaza.html" class="nav-link">🛒 Mağaza</a>
+  </nav>
 
-  <div class="store-item">
-    <h3>VIP Rank</h3>
-    <p>15 TL</p>
-    <a href="https://seninodemeadresin.com" class="btn" target="_blank">Satın Al</a>
+  <div class="container">
+    <div class="card">
+      <h2>💎 VIP Paket</h2>
+      <p>Özel yetkiler, renkli isimler ve daha fazlası!</p>
+      <button class="buy-btn">Satın Al</button>
+    </div>
+    <div class="card">
+      <h2>🎁 Eşya Paketi</h2>
+      <p>Oyunda güçlenmek için çeşitli item'lar içerir.</p>
+      <button class="buy-btn">Satın Al</button>
+    </div>
+    <div class="card">
+      <h2>🚀 Hızlı Başlangıç</h2>
+      <p>Yeni başlayanlar için başlangıç avantajları.</p>
+      <button class="buy-btn">Satın Al</button>
+    </div>
   </div>
 
-  <div class="store-item">
-    <h3>Fly Hakkı</h3>
-    <p>10 TL</p>
-    <a href="https://seninodemeadresin.com" class="btn" target="_blank">Satın Al</a>
-  </div>
+  <footer>
+    © 2025 Netaria Sunucusu - Tüm Hakları Saklıdır.
+  </footer>
 </body>
 </html>
