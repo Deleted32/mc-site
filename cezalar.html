@@ -1,123 +1,192 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Cezalar - Netaria Network</title>
-  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Netaria Cezalar</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet" />
   <style>
     body {
       margin: 0;
       font-family: 'Montserrat', sans-serif;
-      background: url('https://i.imgur.com/FjqSSlK.png') no-repeat center center fixed;
-      background-size: cover;
-      color: white;
-      text-align: center;
+      background: linear-gradient(135deg, #1f1c2c, #928dab);
+      color: #f0f0f0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
 
     nav {
-      background-color: rgba(0, 0, 0, 0.6);
-      padding: 20px;
+      background-color: rgba(0,0,0,0.7);
+      padding: 15px 30px;
       position: fixed;
       top: 0;
       width: 100%;
-      z-index: 999;
+      z-index: 1000;
       display: flex;
       justify-content: center;
-      gap: 20px;
+      gap: 40px;
     }
 
-    .nav-link {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 1rem;
-      color: white;
+    nav a {
+      color: #fff;
       text-decoration: none;
-      font-weight: bold;
-      background-color: rgba(255, 255, 255, 0.1);
-      padding: 10px 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px #000;
-      transition: 0.3s;
+      font-variant: small-caps;
+      font-weight: 600;
+      font-size: 1.1rem;
+      transition: color 0.3s ease;
     }
 
-    .nav-link:hover {
-      background-color: rgba(255, 255, 255, 0.3);
-      text-shadow: 2px 2px 4px #000;
-      transform: scale(1.05);
+    nav a:hover {
+      color: #f39c12;
     }
 
     .container {
-      padding-top: 150px;
+      max-width: 900px;
+      margin: 120px auto 50px;
+      padding: 0 20px;
     }
 
     h1 {
-      font-family: 'Press Start 2P', cursive;
+      text-align: center;
+      font-weight: 700;
       font-size: 2.5rem;
-      text-shadow: 4px 4px 0 #000;
-      margin-bottom: 40px;
+      margin-bottom: 30px;
+      text-shadow: 2px 2px 5px #00000099;
+    }
+
+    .table-wrapper {
+      overflow-x: auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+      background-color: rgba(20, 20, 30, 0.85);
     }
 
     table {
-      margin: 0 auto;
+      width: 100%;
       border-collapse: collapse;
-      background-color: rgba(0, 0, 0, 0.6);
-      color: white;
-      font-size: 1rem;
-      min-width: 70%;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+      min-width: 600px;
+    }
+
+    thead {
+      background: #f39c12;
+      color: #1a1a1a;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
 
     th, td {
       padding: 15px 20px;
-      border: 1px solid white;
+      text-align: left;
+      border-bottom: 1px solid #333;
     }
 
-    th {
-      background-color: #ff4f4f;
+    tbody tr:hover {
+      background-color: #f39c12aa;
+      color: #1a1a1a;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .status-banned {
+      color: #e74c3c;
+      font-weight: 700;
+    }
+
+    .status-muted {
+      color: #3498db;
+      font-weight: 700;
+    }
+
+    .status-warning {
+      color: #f1c40f;
+      font-weight: 700;
     }
 
     footer {
-      margin-top: 50px;
-      font-size: 0.75rem;
+      margin-top: auto;
+      padding: 20px 10px;
+      text-align: center;
       color: #ccc;
-      text-shadow: 1px 1px 2px #000;
+      background-color: rgba(0,0,0,0.6);
+      font-size: 0.9rem;
+      user-select: none;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      nav {
+        gap: 15px;
+        padding: 15px 10px;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      th, td {
+        padding: 10px 12px;
+      }
     }
   </style>
 </head>
 <body>
 
-  <nav>
-    <a href="index.html" class="nav-link">🏠 Ana Sayfa</a>
-    <a href="cezalar.html" class="nav-link">🚫 Cezalar</a>
-    <a href="magaza.html" class="nav-link">🛒 Mağaza</a>
-  </nav>
+<nav>
+  <a href="index.html">🏠 Ana Sayfa</a>
+  <a href="cezalar.html">📋 Cezalar</a>
+  <a href="magaza.html">🛒 Mağaza</a>
+</nav>
 
-  <div class="container">
-    <h1>🚫 CEZA LİSTESİ</h1>
+<div class="container">
+  <h1>Sunucu Cezaları</h1>
+  <div class="table-wrapper">
     <table>
-      <tr>
-        <th>Ceza Türü</th>
-        <th>Süre</th>
-        <th>Açıklama</th>
-      </tr>
-      <tr>
-        <td>Hile Kullanımı</td>
-        <td>Kalıcı</td>
-        <td>Her türlü hile, mod yasaktır.</td>
-      </tr>
-      <tr>
-        <td>Küfür / Hakaret</td>
-        <td>1 Gün</td>
-        <td>Sunucuda saygı esastır.</td>
-      </tr>
-      <!-- İstediğin kadar satır ekleyebilirsin -->
+      <thead>
+        <tr>
+          <th>Oyuncu</th>
+          <th>Ceza Türü</th>
+          <th>Neden</th>
+          <th>Tarih</th>
+          <th>Süre</th>
+          <th>Durum</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Ahmet123</td>
+          <td class="status-banned">Ban</td>
+          <td>Kural ihlali</td>
+          <td>2025-06-01</td>
+          <td>7 Gün</td>
+          <td>Aktif</td>
+        </tr>
+        <tr>
+          <td>GamersTR</td>
+          <td class="status-muted">Mute</td>
+          <td>Spam</td>
+          <td>2025-06-05</td>
+          <td>1 Saat</td>
+          <td>Pasif</td>
+        </tr>
+        <tr>
+          <td>NetariaFan</td>
+          <td class="status-warning">Uyarı</td>
+          <td>Küfür</td>
+          <td>2025-06-07</td>
+          <td>-</td>
+          <td>Pasif</td>
+        </tr>
+        <!-- Daha fazla ceza satırı buraya eklenebilir -->
+      </tbody>
     </table>
   </div>
+</div>
 
-  <footer>
-    © 2025 Netaria Sunucusu - Tüm Hakları Saklıdır.
-  </footer>
+<footer>
+  © 2025 Netaria Sunucusu - Tüm Hakları Saklıdır.
+</footer>
 
 </body>
 </html>
