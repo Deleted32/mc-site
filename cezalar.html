@@ -46,6 +46,24 @@
       color: #f39c12;
     }
 
+    /* KÜÇÜK LOGO - SOL ÜST */
+    .logo-kucuk {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      width: 80px;
+      opacity: 0.85;
+      z-index: 1000;
+      cursor: pointer;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+      filter: drop-shadow(0 0 3px black);
+    }
+
+    .logo-kucuk:hover {
+      transform: scale(1.2);
+      opacity: 1;
+    }
+
     /* KONTEYNER */
     .container {
       margin-top: 120px;
@@ -53,110 +71,63 @@
       margin-left: auto; margin-right: auto;
       padding: 20px;
       display: flex;
-      gap: 30px;
-      justify-content: space-between;
+      gap: 40px;
       color: white;
       text-shadow: 1px 1px 5px rgba(0,0,0,0.9);
     }
 
-    /* BAŞLIK */
-    h1 {
-      font-family: 'Press Start 2P', cursive;
-      font-size: 3rem;
-      margin-bottom: 30px;
-      text-align: center;
-      text-shadow: 4px 4px 0 #000;
-      width: 100%;
-    }
-
-    /* CEZA LİSTESİ */
-    .ceza-listesi {
-      flex: 1;
-      background: rgba(0,0,0,0.5);
+    /* CEZALAR TABLOSU - SAĞDA */
+    .cezalar-tablo {
+      background: rgba(0,0,0,0.6);
       padding: 20px;
       border-radius: 12px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.7);
+      width: 350px;
       font-family: 'Montserrat', sans-serif;
-    }
-
-    .ceza-listesi h2 {
-      margin-top: 0;
-      font-weight: 700;
-      font-size: 1.6rem;
-      margin-bottom: 15px;
-      border-bottom: 2px solid #f39c12;
-      padding-bottom: 8px;
-    }
-
-    .ceza-listesi ul {
-      list-style: none;
-      padding-left: 0;
-      font-size: 1.2rem;
-    }
-
-    .ceza-listesi ul li {
-      margin-bottom: 12px;
-      padding-left: 12px;
-      position: relative;
       font-weight: 600;
-    }
-
-    .ceza-listesi ul li::before {
-      content: "⛔  ";
-      position: absolute;
-      left: 0;
-      color: #f39c12;
-    }
-
-    /* CEZA TABLOSU SAĞDA */
-    .ceza-tablosu {
-      width: 280px;
-      background: rgba(0,0,0,0.5);
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.7);
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 700;
-      color: #f39c12;
-    }
-
-    .ceza-tablosu h3 {
-      margin-top: 0;
-      margin-bottom: 15px;
-      text-align: center;
-      font-size: 1.5rem;
-      border-bottom: 2px solid #f39c12;
-      padding-bottom: 8px;
-    }
-
-    .ceza-tablosu table {
-      width: 100%;
-      border-collapse: collapse;
-    }
-
-    .ceza-tablosu table td {
-      padding: 10px 5px;
-      border-bottom: 1px solid #f39c12;
-      text-align: left;
       font-size: 1.1rem;
+      height: fit-content;
+      align-self: flex-start;
     }
 
-    /* KÜÇÜK LOGO SOL ÜST KÖŞEDE */
-    .logo-kucuk {
-      position: fixed;
-      top: 10px;
-      left: 10px;
-      width: 50px;
-      opacity: 0.3;
-      z-index: 1000;
-      pointer-events: none;
-      user-select: none;
-      filter: drop-shadow(0 0 2px black);
+    .cezalar-tablo h2 {
+      font-family: 'Press Start 2P', cursive;
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+      text-align: center;
+      text-shadow: 2px 2px 0 #000;
+    }
+
+    .cezalar-tablo ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .cezalar-tablo li {
+      margin-bottom: 12px;
+      padding: 6px 8px;
+      background: rgba(243, 156, 18, 0.2);
+      border-radius: 6px;
+      box-shadow: inset 0 0 5px #f39c12;
+    }
+
+    /* İÇERİK SOL KISIM (ÖRNEK METİN) */
+    .icerik {
+      flex-grow: 1;
+      font-size: 1.3rem;
+      line-height: 1.6;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
     }
 
   </style>
 </head>
 <body>
+
+  <!-- LOGO - ÜZERİNE BASINCA ANA SAYFA -->
+  <a href="index.html">
+    <img src="https://i.imgur.com/RiDtWTO.png" alt="Netaria Logo" class="logo-kucuk" />
+  </a>
 
   <!-- NAV -->
   <nav>
@@ -165,34 +136,23 @@
     <a href="magaza.html">🛒 Mağaza</a>
   </nav>
 
-  <!-- KÜÇÜK LOGO -->
-  <img src="https://i.imgur.com/RiDtWTO.png" alt="Netaria Logo" class="logo-kucuk" />
-
   <!-- İÇERİK -->
-  <h1>Cezalar</h1>
-
   <div class="container">
-    <div class="ceza-listesi">
-      <h2>Ceza Türleri</h2>
-      <ul>
-        <li>Hile Kullanımı - 15 Gün Ban</li>
-        <li>Küfür - 5 Saat Ban</li>
-        <li>Ailevi Küfür - 1 Gün Ban</li>
-        <li>TP Tuzağı - 7 Gün Ban</li>
-        <li>Dolandırıcılık - 14 Gün Ban</li>
-        <!-- İstersen buraya başka ceza türleri ekleyebilirsin -->
-      </ul>
+    <div class="icerik">
+      <h1>Cezalar</h1>
+      <p>Sunucumuzda kurallara uymak önemlidir. Aşağıdaki cezalar, çeşitli ihlaller için uygulanmaktadır.</p>
     </div>
 
-    <div class="ceza-tablosu">
-      <h3>Ceza Süreleri</h3>
-      <table>
-        <tr><td>  Hile Kullanımı</td><td>15 Gün Ban</td></tr>
-        <tr><td>  Küfür</td><td>5 Saat Ban</td></tr>
-        <tr><td>  Ailevi Küfür</td><td>1 Gün Ban</td></tr>
-        <tr><td>  TP Tuzağı</td><td>7 Gün Ban</td></tr>
-        <tr><td>  Dolandırıcılık</td><td>14 Gün Ban</td></tr>
-      </table>
+    <div class="cezalar-tablo">
+      <h2>Ceza Listesi</h2>
+      <ul>
+        <li>Hile Kullanımı: 15 gün ban</li>
+        <li>Küfür: 5 saat ban</li>
+        <li>Ailevi Küfür: 1 gün ban</li>
+        <li>TP Tuzağı: 7 gün ban</li>
+        <li>Dolandırıcılık: 14 gün ban</li>
+        <!-- İstersen buraya diğer cezaları ekleyebilirsin -->
+      </ul>
     </div>
   </div>
 
