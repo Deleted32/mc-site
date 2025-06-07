@@ -1,17 +1,12 @@
-<nav style="background-color: rgba(0, 0, 0, 0.6); padding: 20px; position: fixed; top: 0; width: 100%; z-index: 999; display: flex; justify-content: center; gap: 20px;">
-  <a href="index.html" class="nav-link">🏠 Ana Sayfa</a>
-  <a href="cezalar.html" class="nav-link">🚫 Cezalar</a>
-  <a href="magaza.html" class="nav-link">🛒 Mağaza</a>
-</nav>
-<div style="margin-top: 100px;"></div>
-
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Netaria Network</title>
-  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
+  <!-- Fontlar -->
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
@@ -22,10 +17,24 @@
       text-align: center;
     }
 
+    nav {
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 20px;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 999;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
     .nav-link {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1rem;
+      text-transform: none;
       color: white;
       text-decoration: none;
-      font-variant: small-caps;
       font-weight: bold;
       background-color: rgba(255, 255, 255, 0.1);
       padding: 10px 20px;
@@ -41,7 +50,7 @@
     }
 
     .container {
-      padding-top: 10%;
+      padding-top: 150px;
     }
 
     h1 {
@@ -51,15 +60,15 @@
 
     p {
       font-size: 1rem;
-      color: #00ff00;
+      color: #8fff8f;
+      margin-bottom: 30px;
       text-shadow: 1px 1px 2px #000;
-      margin: 20px;
     }
 
     .btn {
       margin: 20px;
       padding: 20px 40px;
-      font-size: 1.5rem;
+      font-size: 1.2rem;
       color: white;
       background-color: #f39c12;
       border: none;
@@ -68,7 +77,8 @@
       text-decoration: none;
       display: inline-block;
       box-shadow: 0 5px 0 #c87f0a;
-      transition: transform 0.2s ease;
+      transition: transform 0.2s;
+      font-family: 'Montserrat', sans-serif;
     }
 
     .btn.discord {
@@ -89,17 +99,28 @@
   </style>
 </head>
 <body>
+
+  <!-- Menü -->
+  <nav>
+    <a href="index.html" class="nav-link">🏠 Ana Sayfa</a>
+    <a href="cezalar.html" class="nav-link">🚫 Cezalar</a>
+    <a href="magaza.html" class="nav-link">🛒 Mağaza</a>
+  </nav>
+
+  <!-- İçerik -->
   <div class="container">
     <h1>NETARIA NETWORK</h1>
     <p>Hayalindeki Minecraft dünyası seni bekliyor!</p>
-    <a href="https://discord.gg/senindiscordlinkin" class="btn discord" target="_blank">💬 Discord</a>
-    <a onclick="copyIP()" class="btn">🎮 Sunucuya Katıl</a>
+    <a href="https://discord.gg/senindiscordlinkin" class="btn discord" target="_blank">Discord</a>
+    <a onclick="copyIP()" class="btn">Sunucuya Katıl</a>
   </div>
 
+  <!-- Alt Bilgi -->
   <footer>
     © 2025 Netaria Sunucusu - Tüm Hakları Saklıdır.
   </footer>
 
+  <!-- IP Kopyalama -->
   <script>
     function copyIP() {
       const ip = "play.netaria.net";
@@ -108,5 +129,6 @@
       });
     }
   </script>
+
 </body>
 </html>
