@@ -45,26 +45,7 @@
       color: #f39c12;
     }
 
-    /* KONTEYNER */
-    .container {
-      margin-top: 120px;
-      text-align: center;
-      padding: 20px;
-      text-shadow: 1px 1px 5px rgba(0,0,0,0.9);
-    }
-
-    /* ANA BAŞLIK GÖRSEL */
-    .ana-baslik {
-      margin: 50px auto;
-      transition: transform 0.5s ease;
-      max-width: 90%;
-    }
-
-    .ana-baslik:hover {
-      transform: scale(1.05) rotate(1deg);
-    }
-
-    /* KÜÇÜK LOGO SOL ÜST KÖŞE */
+    /* KÜÇÜK LOGO SOL ÜST */
     .logo-kucuk {
       position: fixed;
       top: 10px;
@@ -82,39 +63,54 @@
       opacity: 1;
     }
 
-    /* IP KOPYALANDI BİLDİRİMİ */
-    #copyNotification {
-      display: none;
-      position: fixed;
-      top: 80px;
-      right: 20px;
-      background: #f39c12;
-      color: black;
-      padding: 12px 20px;
-      border-radius: 10px;
-      font-weight: 700;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.5);
-      z-index: 2000;
-      font-family: 'Montserrat', sans-serif;
+    /* ANA GÖRSEL (YAZI) */
+    .ana-baslik {
+      display: block;
+      margin: 150px auto 50px auto;
+      max-width: 100%;
+      width: 800px;
+      transition: transform 0.4s ease;
+    }
+
+    .ana-baslik:hover {
+      transform: scale(1.05) rotate(1deg);
     }
 
     /* KOPYALAMA BUTONU */
     .btn {
-      margin-top: 40px;
-      background-color: #f39c12;
-      color: black;
-      padding: 15px 30px;
+      margin-top: 60px;
+      background-color: #a347ff;
+      color: white;
+      padding: 15px 35px;
       font-weight: 700;
       font-family: 'Montserrat', sans-serif;
       border: none;
-      border-radius: 10px;
+      border-radius: 12px;
       cursor: pointer;
-      box-shadow: 0 5px 0 #c87f0a;
-      transition: transform 0.3s ease;
+      font-size: 1.1rem;
+      box-shadow: 0 5px 0 #7a30c6;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .btn:hover {
-      transform: scale(1.05);
+      transform: scale(1.07);
+      box-shadow: 0 6px 10px rgba(163,71,255,0.4);
+    }
+
+    /* IP KOPYALANDI BİLDİRİMİ */
+    #copyNotification {
+      display: none;
+      position: fixed;
+      top: 100px;
+      right: 20px;
+      background: #a347ff;
+      color: white;
+      padding: 12px 22px;
+      border-radius: 12px;
+      font-weight: 700;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.4);
+      z-index: 2000;
+      font-family: 'Montserrat', sans-serif;
     }
 
   </style>
@@ -128,19 +124,23 @@
     <a href="magaza.html">🛒 Mağaza</a>
   </nav>
 
-  <!-- KÜÇÜK LOGO (TIKLANABİLİR) -->
+  <!-- KÜÇÜK LOGO -->
   <a href="index.html">
     <img src="https://i.imgur.com/RiDtWTO.png" alt="Netaria Logo" class="logo-kucuk" />
   </a>
 
-  <!-- ANA GÖRSEL (MC TARZI METİN) -->
+  <!-- ANA GÖRSEL -->
   <div class="container">
-    <img src="https://static1.textcraft.net/data1/d/d/ddd11066f9a986591a37295c3c93a08e9be601cda2616ec649122b989d6356c0fdf3ed58460ce343da39a3ee5e6b4b0d3255bfef95601890afd8070992b7f134cfd96e1c1c06b5e05ba83304.png" alt="Netaria Network" class="ana-baslik" />
+    <img
+      src="https://static1.textcraft.net/data1/d/d/ddd11066f9a986591a37295c3c93a08e9be601cda2616ec649122b989d6356c0fdf3ed58460ce343da39a3ee5e6b4b0d3255bfef95601890afd8070992b7f134cfd96e1c1c06b5e05ba83304.png"
+      alt="Netaria Network"
+      class="ana-baslik"
+    />
 
     <button class="btn" onclick="copyIP()">Sunucu IP'sini Kopyala</button>
   </div>
 
-  <!-- IP KOPYALANDI BİLDİRİMİ -->
+  <!-- KOPYALANDI BİLDİRİMİ -->
   <div id="copyNotification">IP adresi kopyalandı! 🎉</div>
 
   <!-- JS -->
