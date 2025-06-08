@@ -63,7 +63,7 @@
       opacity: 1;
     }
 
-    /* KONTEYNER - ORTALA İÇERİK */
+    /* ANA GÖRSEL (YAZI) */
     .container {
       margin-top: 150px;
       max-width: 900px;
@@ -73,10 +73,9 @@
       padding: 0 20px;
     }
 
-    /* ANA GÖRSEL (YAZI) */
     .ana-baslik {
       max-width: 100%;
-      width: 800px;
+      width: 600px; /* küçültüldü */
       margin: 0 auto 50px auto;
       transition: transform 0.4s ease;
       display: block;
@@ -88,7 +87,7 @@
 
     /* KOPYALAMA BUTONU */
     .btn {
-      margin-top: 60px;
+      margin-top: 80px; /* biraz daha aşağı alındı */
       background-color: #a347ff;
       color: white;
       padding: 15px 35px;
@@ -104,6 +103,8 @@
       display: block;
       margin-left: auto;
       margin-right: auto;
+      width: max-content;
+      min-width: 180px;
     }
 
     .btn:hover {
