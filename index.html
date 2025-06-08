@@ -3,30 +3,32 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Netaria Anasayfa</title>
+  <title>Netaria Ana Sayfa</title>
 
-  <!-- Fontlar -->
+  <!-- Font -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Press+Start+2P&display=swap" rel="stylesheet" />
 
   <style>
-    /* GENEL BODY & ARKA PLAN */
+    /* GENEL STİL */
     html, body {
-      margin: 0; padding: 0; height: 100%;
-      font-family: 'Montserrat', 'Press Start 2P', cursive, sans-serif;
-      color: white;
-      background:
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: 'Montserrat', sans-serif;
+      background: 
         linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
         url('https://i.imgur.com/vwpDzZx_d.webp?maxwidth=760&fidelity=grand') no-repeat center center fixed;
       background-size: cover;
-      background-position: center center;
+      background-position: center;
+      color: white;
     }
 
-    /* NAV */
     nav {
       background-color: rgba(0, 0, 0, 0.6);
       padding: 20px;
       position: fixed;
-      top: 0; width: 100%;
+      top: 0;
+      width: 100%;
       display: flex;
       justify-content: center;
       gap: 30px;
@@ -36,7 +38,6 @@
     nav a {
       color: white;
       text-decoration: none;
-      font-variant: small-caps;
       font-weight: 600;
       font-family: 'Montserrat', sans-serif;
       transition: color 0.3s ease;
@@ -46,43 +47,63 @@
       color: #f39c12;
     }
 
-    /* KÜÇÜK LOGO - SOL ÜST */
+    .container {
+      margin-top: 120px;
+      text-align: center;
+      padding: 20px;
+    }
+
+    /* ANA YAZI (TextCraft Logo) */
+    .netaria-logo-container {
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    .netaria-logo {
+      width: 320px;
+      max-width: 90%;
+      transition: transform 0.5s ease, filter 0.5s ease;
+      cursor: pointer;
+      filter: drop-shadow(0 0 8px black);
+    }
+
+    .netaria-logo:hover {
+      transform: scale(1.08) rotate(2deg);
+      filter: drop-shadow(0 0 15px #f39c12);
+    }
+
+    /* KÜÇÜK LOGO SOL ÜST */
     .logo-kucuk {
       position: fixed;
       top: 10px;
       left: 10px;
-      width: 80px; /* Daha büyük yaptık */
-      opacity: 0.85;
+      width: 60px;
+      opacity: 0.5;
       z-index: 1000;
       cursor: pointer;
-      transition: transform 0.3s ease, opacity 0.3s ease;
-      filter: drop-shadow(0 0 3px black);
+      transition: transform 0.3s ease;
     }
 
     .logo-kucuk:hover {
       transform: scale(1.2);
-      opacity: 1;
     }
 
-    /* KONTEYNER */
-    .container {
-      margin-top: 120px;
-      max-width: 900px;
-      margin-left: auto; margin-right: auto;
-      text-align: center;
-      padding: 20px;
-      text-shadow: 1px 1px 5px rgba(0,0,0,0.9);
+    /* IP KOPYALANDI MESAJI */
+    #copyNotification {
+      display: none;
+      position: fixed;
+      top: 80px;
+      right: 20px;
+      background: #f39c12;
+      color: black;
+      padding: 12px 20px;
+      border-radius: 10px;
+      font-weight: 700;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.5);
+      z-index: 2000;
     }
 
-    /* BAŞLIK */
-    h1 {
-      font-family: 'Press Start 2P', cursive;
-      font-size: 3rem;
-      margin-bottom: 30px;
-      text-shadow: 4px 4px 0 #000;
-    }
-
-    /* DİSCORD VE SUNUCU BUTONU */
+    /* BUTON */
     .btn {
       margin-top: 40px;
       background-color: #f39c12;
@@ -100,36 +121,52 @@
     .btn:hover {
       transform: scale(1.05);
     }
+
   </style>
 </head>
 <body>
 
-  <!-- LOGO - ÜZERİNE BASINCA ANA SAYFA -->
+  <!-- Navigasyon -->
+  <nav>
+    <a href="index.html">🏠 Ana Sayfa</a>
+    <a href="cezalar.html">⚖️ Cezalar</a>
+    <a href="magaza.html">🛒 Mağaza</a>
+  </nav>
+
+  <!-- Sol üstte küçük logo -->
   <a href="index.html">
     <img src="https://i.imgur.com/RiDtWTO.png" alt="Netaria Logo" class="logo-kucuk" />
   </a>
 
-  <!-- NAV -->
-  <nav>
-    <a href="index.html">🏠 ana sayfa</a>
-    <a href="cezalar.html">⚖️ cezalar</a>
-    <a href="magaza.html">🛒 mağaza</a>
-  </nav>
-
-  <!-- İÇERİK -->
+  <!-- Ana içerik -->
   <div class="container">
-    <h1>NETARIA NETWORK</h1>
-    <p>Minecraft dünyası seni bekliyor!</p>
 
-    <a href="https://discord.gg/senindiscordlinkin" class="btn discord" target="_blank">Discord</a>
+    <!-- TextCraft Logosu -->
+    <div class="netaria-logo-container">
+      <a href="index.html">
+        <img src="https://static1.textcraft.net/data1/d/d/ddd11066f9a986591a37295c3c93a08e9be601cda2616ec649122b989d6356c0fdf3ed58460ce343da39a3ee5e6b4b0d3255bfef95601890afd807091826260aa20bac2e4431e1da281a347c.png"
+             alt="Netaria Network"
+             class="netaria-logo">
+      </a>
+    </div>
+
+    <!-- IP Kopyala Butonu -->
     <button class="btn" onclick="copyIP()">Sunucu IP'sini Kopyala</button>
   </div>
 
+  <!-- Bildirim -->
+  <div id="copyNotification">IP adresi kopyalandı! 🎉</div>
+
+  <!-- JS -->
   <script>
     function copyIP() {
       const ip = "play.netaria.net";
       navigator.clipboard.writeText(ip).then(() => {
-        alert("IP adresi kopyalandı! 🎉");
+        const notif = document.getElementById('copyNotification');
+        notif.style.display = 'block';
+        setTimeout(() => {
+          notif.style.display = 'none';
+        }, 2500);
       });
     }
   </script>
