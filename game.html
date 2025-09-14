@@ -2,21 +2,16 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
-    <title>Mini Strateji - Oyun</title>
+    <title>Mini Strateji 3D</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Mini Strateji Oyunu</h1>
-    <div id="goldDisplay">💰 Altın: 0</div>
-    <button onclick="earnGold()">Altın Kazan</button>
-
-    <div id="workersDisplay">👷 İşçi: 0</div>
-    <button onclick="buyWorker()">İşçi Al (10 Altın)</button>
-
-    <div id="minesDisplay">🏠 Maden: 0</div>
-    <button onclick="buyMine()">Maden Kur (100 Altın)</button>
-
+    <h1>Mini Strateji 3D Oyunu</h1>
+    <div id="gameContainer"></div>
     <button onclick="logout()">Çıkış Yap</button>
+
+    <!-- Three.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.155.0/build/three.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
